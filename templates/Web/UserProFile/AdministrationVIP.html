@@ -1,0 +1,64 @@
+{% load static %}
+  <!-- Latest Preview Section Begin -->
+    <section class="latest-preview-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center" >
+                        <h5>الهيئة العليا المهرجان</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="lp-slider owl-carousel">
+
+                   {% for pr in MyPros %}
+                       {% if pr.is_active == True %}
+                       {% if pr.SpecialtyType.is_Site_1 == True%}
+
+                    <div class="col-lg-3" >
+                        <div class="lp-item ">
+                            <img class="lp-pic set-bg " src="{{ pr.Profile_Icon.url }}" style="height: 170px">
+                                <div class="review-loader">
+                                    <div class="loader-circle-wrap">
+
+                                    </div>
+                                </div>
+
+
+                            <div class="lp-text text-center">
+                                <h6><a href="{% url 'indexPostsWeb' pr.id %}">{{ pr.FullName }}</a></h6>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>{{ pr.SpecialtyType }}</li>
+                                    <li><i class="fa fa-comment-o"></i>{{ pr.Specialty }}</li>
+                                </ul>
+
+                         <div class="fa-social p-2">
+                            {% if pr.Snapchat != None %}
+                            <a href="{{ pr.Snapchat }}"><i class="fa fa-snapchat p-2"></i></a>
+                            {% endif %}
+                            {% if pr.YouTube != None %}
+                            <a href="{{ pr.YouTube }}"><i class="fa fa-youtube-play p-2"></i></a>
+                                {% endif %}
+                             {% if pr.Instagram != None %}
+                            <a href="{{ pr.Instagram }}"><i class="fa fa-instagram p-2"></i></a>
+                                 {% endif %}
+                            {% if pr.Twitter != None %}
+                            <a href="{{ pr.Twitter }}"><i class="fa fa-twitter p-2"></i></a>
+                                {% endif %}
+                            {% if pr.Facebook != None %}
+                            <a href="{{ pr.Facebook }}"><i class="fa fa-facebook p-2"></i></a>
+                                {% endif %}
+                        </div>
+
+                            </div>
+                        </div>
+                    </div>
+                       {% endif %}
+                       {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>

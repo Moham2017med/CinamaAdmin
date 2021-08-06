@@ -1,0 +1,80 @@
+{% load static %}
+
+    <!-- Hero Section Begin -->
+    <section class="video-guide-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="trending-post">
+                        <div class="section-title">
+                            <h5>الهيئة العليا للمهرجان</h5>
+                        </div>
+                        <div class="trending-slider owl-carousel">
+
+                            <div class="single-trending-item" >
+                                 {% for ar in articlesVip|slice:"0:6" %}
+                                            {% if ar.is_active == True %}
+                                            {% if ar.is_staff == True %}
+
+                               <div class="col-md-12 pb-2 border-bottom" >
+
+        <div class="un-item">
+            <img class="un_pic set-bg" src="{{ar.image.url}}" style="height: 85px">
+
+                <div class="label text-center" ><span style="color: wheat">{{ ar.profile.FullName }}</span></div>
+
+            <div class="un_text text-center">
+
+                    <h6><a class="text-center" href="{% url 'ArticlesDetailViewWeb' ar.id%}" style="color: white">{{ ar.title|slice:'30' }}</a></h6>
+            </div>
+        </div>
+    </div>
+
+                                  {% endif %}
+                                     {% endif %}
+                                {% endfor %}
+
+                            </div>
+
+                            <div class="single-trending-item">
+                                <div class="trending-item">
+                                     {% for ar in articlesVip|slice:"5:10" %}
+                                            {% if ar.is_active == True %}
+                                            {% if ar.is_staff == True %}
+
+                               <div class="col-md-12 pb-2 border-bottom" >
+
+        <div class="un-item">
+            <img class="un_pic set-bg" src="{{ar.image.url}}" style="height: 85px">
+
+                <div class="label text-center" ><span style="color: wheat">{{ ar.profile.FullName }}</span></div>
+
+            <div class="un_text text-center">
+
+                    <h6><a class="text-center" href="{% url 'ArticlesDetailViewWeb' ar.id%}" style="color: white">{{ ar.title|slice:'30' }}</a></h6>
+            </div>
+        </div>
+    </div>
+
+                                  {% endif %}
+                                          {% endif %}
+                                {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 text-center">
+                     <!--img src="{% static 'img/logCinena.jpeg' %}" alt="" height="350px"-->
+                    {% include 'Web/UserProFile/ArticlesVIP.html' %}
+
+
+
+
+               </div>
+
+            </div>
+        </div>
+
+    </section>

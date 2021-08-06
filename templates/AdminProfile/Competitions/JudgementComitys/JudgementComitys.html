@@ -1,0 +1,54 @@
+{% load static %}
+
+
+
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <img src="{{ Jud.JudgementComity.Profile_Icon.url }}" alt="image"
+                                                 class="img-fluid wid-100 mb-2">
+                                            <h5>{{ Com.user }}<br><span class="badge badge-success" style="color: black">{{ Jud.JudgementComity.FullName }}</span>
+                                            </h5>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm mb-0">
+                                                <tbody>
+                                                <tr>
+                                                    <td> الدولة</td>
+                                                    <td> : {{ Jud.JudgementComity.State }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td> نوع التخصص</td>
+                                                    <td> : {{ Jud.Stages }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>التخصص</td>
+                                                    <td> : {{ Jud.MovieSections }}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+
+                                        <div class="text-center">
+
+                                            <a href="#"
+                                               class="btn btn-danger  text-center" style="color:black">أضافة متسابق</a>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+

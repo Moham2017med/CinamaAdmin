@@ -1,0 +1,189 @@
+{% extends 'AdminProfile/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block Content %}
+    <div class="pcoded-content">
+        <div class="pcoded-main-container">
+
+            <!-- profile header start -->
+            <div class="user-profile user-card mb-4">
+                <div class="card-header border-0 p-0 pb-0">
+                    <div class="cover-img-block">
+                        <!-- <img src="{%static 'assets/images/profile/cover.jpg' %}" alt="" class="img-fluid"> -->
+                        <div class="overlay"></div>
+                        <div class="change-cover">
+                            <div class="dropdown">
+                                <a class="drp-icon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false"><i class="icon feather icon-camera"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#"><i class="feather icon-upload-cloud mr-2"></i>upload
+                                        new</a>
+                                    <a class="dropdown-item" href="#"><i class="feather icon-image mr-2"></i>from photos</a>
+                                    <a class="dropdown-item" href="#"><i class="feather icon-film mr-2"></i> upload
+                                        video</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="feather icon-trash-2 mr-2"></i>remove</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body py-0">
+                    <div class="user-about-block m-0">
+                        <div class="row">
+                            <div class="col-md-4 text-center mt-n5">
+                                <div class="change-profile text-center">
+                                    <div class="dropdown w-auto d-inline-block">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                           aria-expanded="false">
+                                            <div class="profile-dp">
+                                                <div class="position-relative d-inline-block">
+                                                    <img class="img-radius  wid-100" height="200px"
+                                                         src="{{ MyPro.Profile_Icon.url }}" alt="User image">
+                                                </div>
+                                                <div class="overlay">
+                                                    <span>change</span>
+                                                </div>
+                                            </div>
+                                            <div class="certificated-badge">
+                                                <i class="fas fa-certificate text-c-blue bg-icon"></i>
+                                                <i class="fas fa-check front-icon text-white"></i>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="feather icon-upload-cloud mr-2"></i>upload new</a>
+                                            <a class="dropdown-item" href="#"><i class="feather icon-image mr-2"></i>from
+                                                photos</a>
+                                            <a class="dropdown-item" href="#"><i class="feather icon-shield mr-2"></i>Protact</a>
+                                            <a class="dropdown-item" href="#"><i class="feather icon-trash-2 mr-2"></i>remove</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h5 class="mb-1">{{ MyPro.FullName }} </h5>
+                                <p class="mb-2 text-muted">{{ MyPro.SpecialtyType.SpecialtyType }}
+                                    _ {{ MyPro.Specialty.Specialty }}</p>
+
+                            </div>
+                            <div class="col-md-8 mt-md-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="#!" class="mb-1 text-muted d-flex align-items-end text-h-primary"><i
+                                                class="feather icon-globe mr-2 f-18"></i>www.CinemaOnline.com</a>
+                                        <div class="clearfix"></div>
+                                        <a href="mailto:demo@domain.com"
+                                           class="mb-1 text-muted d-flex align-items-end text-h-primary"><i
+                                                class="feather icon-mail mr-2 f-18"></i>{{ MyPro.user.email }}</a>
+                                        <div class="clearfix"></div>
+                                        <a href="#!" class="mb-1 text-muted d-flex align-items-end text-h-primary"><i
+                                                class="feather icon-phone mr-2 f-18"></i>{{ MyPro.Phone }}</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="media">
+                                            <i class="feather icon-map-pin mr-2 mt-1 f-18"></i>
+                                            <div class="media-body">
+
+                                                <p class="mb-0 text-muted">{{ MyPro.State.State }}</p>
+                                                <p class="mb-0 text-muted">{{ MyPro.address }}</p>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs profile-tabs nav-fill" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-reset active" id="home-tab" data-toggle="tab"
+                                           href="#home" role="tab" aria-controls="home" aria-selected="true"><i
+                                                class="feather icon-home mr-2"></i>جميع المراحل</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-reset" id="profile-tab" data-toggle="tab"
+                                           href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i
+                                                class="feather icon-user mr-2"></i>المرحلة الاولى</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-reset" id="contact-tab" data-toggle="tab"
+                                           href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i
+                                                class="feather icon-phone mr-2"></i>المرحلة الثانية</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- profile header end -->
+
+            <!-- profile body start -->
+            <div class="row">
+                <div class="col-md-12 order-md-2">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                            <div CLASS="container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        {% include 'AdminProfile/Participants/Side_1.html' %}
+
+                                    </div>
+                                    <div class="col-md-8">
+                                       {% include 'AdminProfile/Participants/Video_1.html' %}
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-------------------------profile-tab--------------------------->
+
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                             <div CLASS="container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        {% include 'AdminProfile/Participants/Side_2.html' %}
+
+                                    </div>
+                                    <div class="col-md-8">
+                                       {% include 'AdminProfile/Participants/Video_2.html' %}
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                     <div CLASS="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                {% include 'AdminProfile/Participants/Side_3.html' %}
+
+                            </div>
+                            <div class="col-md-8">
+                               {% include 'AdminProfile/Participants/Video_3.html' %}
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- profile body end -->
+        </div>
+    </div>
+
+
+{% endblock Content %}
+

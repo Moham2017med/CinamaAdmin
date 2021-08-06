@@ -1,0 +1,57 @@
+{% extends 'AdminProfile/CinamaMedia/MuneYouTube.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block YouTube %}
+
+    <div class="card ">
+        <div class="card-header">
+            <h5>{% trans 'Video Grid' %}</h5>
+        </div>
+        <div class="row">
+            {% for yot in youTube %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail mb-4">
+                    <div class="thumb">
+                        <div class="card-header text-white bg-dark mt-auto">
+
+                                <h5 class="card-title text-white">{{ yot.title|slice:'35' }}</h5>
+
+                        </div>
+                        <div class="embed-responsive embed-responsive-16by9 ">
+                            <iframe src="https://www.youtube.com/embed/{{yot.linke}}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+                            </iframe>
+
+                        </div>
+                        <div class="card-body text-white bg-dark">
+                        {{ yot.author.FullName }}<p style="color: red">{{ yot.created }}</p>
+
+
+                             {% if yot.content|length > 20 %}
+                               <p class="card-text">{{ yot.content|slice:'50' }}</p>
+                                    {% endif %}
+                        <div style="color: blue">
+						<a href="{% url 'YouTubeUpdate' yot.id %}" class="card-link" style="color: white">{% trans 'Update' %}</a>
+						<a href="{% url 'YouTubeDelete' yot.id %}" class="card-link" style="color: red">{% trans 'Delete' %}</a>
+					</div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,141 @@
+{% extends 'AdminProfile/Competitions/JudgementComitys/MuneJudgementComitys.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block JudgementComitys %}
+
+
+    <!-- profile header end -->
+
+    <!-- profile body start -->
+    <div class="col-sm-12">
+        <div class="card">
+            <ul class="nav nav-tabs profile-tabs nav-fill" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link text-reset active" id="home-tab" data-toggle="tab"
+                       href="#home" role="tab" aria-controls="home" aria-selected="true"><i
+                            class="feather icon-home mr-2"></i>المرحلة الاولى</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-reset" id="profile-tab" data-toggle="tab"
+                       href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i
+                            class="feather icon-user mr-2"></i>المرحلة الثانية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-reset" id="contact-tab" data-toggle="tab"
+                       href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i
+                            class="feather icon-phone mr-2"></i>المرحلة الافلام</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                <div CLASS="container">
+                    <div class="row">
+
+                        <div class="col-md-4">
+
+                            {% for Jud in Judgementy %}
+
+                                {% if Jud.Stages.id == 2 %}
+
+                                    {% include 'AdminProfile/Competitions/JudgementComitys/JudgementComitys.html' %}
+                                {% endif %}
+
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-8">
+
+
+                            {% for videos in my_videos %}
+
+                                {% if videos.Stages.id == 2 %}
+                                    {% include 'AdminProfile/Competitions/Participants/Video_1.html' %}
+                                {% endif %}
+                            {% endfor %}
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-------------------------profile-tab--------------------------->
+
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div CLASS="container">
+                    <div class="row">
+
+                       <div class="col-md-4">
+                        {% for Jud in Judgementy %}
+
+                            {% if Jud.Stages.id == 3 %}
+                                {% include 'AdminProfile/Competitions/JudgementComitys/JudgementComitys.html' %}
+                            {% endif %}
+
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-8">
+
+
+                        {% for videos in my_videos %}
+                            {% if videos.Stages.id == 3 %}
+                                {% include 'AdminProfile/Competitions/Participants/Video_1.html' %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+            <div CLASS="container">
+                <div class="row">
+
+                      <div class="col-md-4">
+
+                            {% for Jud in Judgementy %}
+                                {% if Jud.Stages.id == 4 %}
+
+                                    {% include 'AdminProfile/Competitions/JudgementComitys/JudgementComitys.html' %}
+                                {% endif %}
+
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="col-md-8">
+
+
+                            {% for videos in my_videos %}
+                                {% if videos.Stages.id == 4 %}
+
+                                        {% include 'AdminProfile/Competitions/Participants/Video_1.html' %}
+
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,397 @@
+{% load static %}
+    <!-- Videos Guide Section Begin -->
+    <section class="video-guide-section">
+        <div class="container">
+            <div class="section-title text-center" style="background: red">
+                        <h5>فسم فيديوهات المهرجان</h5>
+                    </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h5></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-elem">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#vtabs-5" role="tab">جميع المراحل</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " data-toggle="tab" href="#vtabs-6" role="tab">فيديوهات المهرجان</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#vtabs-7" role="tab">المرحلة التقديم</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#vtabs-8" role="tab">المرحلة الاولى</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#vtabs-9" role="tab">المرحلة الثانية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#vtabs-10" role="tab">مرحلة الافلام</a>
+                    </li>
+                </ul><!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="vtabs-5" role="tabpanel">
+
+                        <div class="row">
+                            <div class="vg-slider owl-carousel">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        {% for vid in video|slice:"0:2" %}
+                                        {% if vid.is_active == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+
+                                       {% for vid in video|slice:"4:7" %}
+                                         {% if vid.is_active == True %}
+
+                                        {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                         {% for vid in video|slice:"2:4" %}
+                                            {% if vid.is_active == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+                                        {% for vid in video|slice:"7:10" %}
+                                         {% if vid.is_active == True %}
+
+                                         {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="vtabs-6" role="tabpanel">
+
+                       <div class="row">
+                            <div class="vg-slider owl-carousel">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        {% for vid in video|slice:"0:2" %}
+                                        {% if vid.is_active == True %}
+                                        {% if vid.Stages.is_Site_1 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+
+                                       {% for vid in video|slice:"4:7" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_1 == True %}
+
+                                        {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                         {% for vid in video|slice:"2:4" %}
+                                            {% if vid.is_active == True %}
+                                            {% if vid.Stages.is_Site_1 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                          {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+                                        {% for vid in video|slice:"7:10" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_1 == True %}
+
+                                         {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                         <div class="tab-pane fade" id="vtabs-7" role="tabpanel">
+
+                       <div class="row">
+                            <div class="vg-slider owl-carousel">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        {% for vid in video|slice:"0:2" %}
+                                        {% if vid.is_active == True %}
+                                        {% if vid.Stages.is_Site_2 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+
+                                       {% for vid in video|slice:"4:7" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_2 == True %}
+
+                                        {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                         {% for vid in video|slice:"2:4" %}
+                                            {% if vid.is_active == True %}
+                                            {% if vid.Stages.is_Site_2 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                          {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+                                        {% for vid in video|slice:"7:10" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_2 == True %}
+
+                                         {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                          <div class="tab-pane fade" id="vtabs-8" role="tabpanel">
+
+                       <div class="row">
+                            <div class="vg-slider owl-carousel">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        {% for vid in video|slice:"0:2" %}
+                                        {% if vid.is_active == True %}
+                                        {% if vid.Stages.is_Site_3 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+
+                                       {% for vid in video|slice:"4:7" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_3 == True %}
+
+                                        {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                         {% for vid in video|slice:"2:4" %}
+                                            {% if vid.is_active == True %}
+                                            {% if vid.Stages.is_Site_3 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                          {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+                                        {% for vid in video|slice:"7:10" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_3 == True %}
+
+                                         {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                          <div class="tab-pane fade" id="vtabs-9" role="tabpanel">
+
+                       <div class="row">
+                            <div class="vg-slider owl-carousel">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        {% for vid in video|slice:"0:2" %}
+                                        {% if vid.is_active == True %}
+                                        {% if vid.Stages.is_Site_4 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+
+                                       {% for vid in video|slice:"4:7" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_4 == True %}
+
+                                        {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                         {% for vid in video|slice:"2:4" %}
+                                            {% if vid.is_active == True %}
+                                            {% if vid.Stages.is_Site_4 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                          {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+                                        {% for vid in video|slice:"7:10" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_4 == True %}
+
+                                         {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                            <div class="tab-pane fade" id="vtabs-10" role="tabpanel">
+
+                       <div class="row">
+                            <div class="vg-slider owl-carousel">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        {% for vid in video|slice:"0:2" %}
+                                        {% if vid.is_active == True %}
+                                        {% if vid.Stages.is_Site_1 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+
+                                       {% for vid in video|slice:"4:7" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_1 == True %}
+
+                                        {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                         {% for vid in video|slice:"2:4" %}
+                                            {% if vid.is_active == True %}
+                                            {% if vid.Stages.is_Site_1 == True %}
+
+                                        {% include 'Web/Sections/Video_1.html' %}
+
+                                        {% endif %}
+                                          {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="row">
+                                        {% for vid in video|slice:"7:10" %}
+                                         {% if vid.is_active == True %}
+                                         {% if vid.Stages.is_Site_1 == True %}
+
+                                         {% include 'Web/Sections/Video_2.html' %}
+
+                                        {% endif %}
+                                         {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Videos Guide Section End --> <!-- Videos Guide Section End -->

@@ -1,0 +1,51 @@
+{% extends 'AdminProfile/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block Content %}
+    <div class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">{% trans 'home' %}</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#!">{% trans 'Cinema Video' %}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <!-- [ Main Content ] start -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <ul class="nav nav-pills bg-white">
+                                <li class="nav-item">
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="{% url 'profile_posts' %}">{% trans 'Video' %}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="{% url 'file-upload' %}">{% trans 'New Video' %}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+    {% block Video %}
+
+    {% endblock Video %}
+    </div>
+ </div>
+ {% endblock Content %}

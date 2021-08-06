@@ -1,0 +1,38 @@
+{% load static %}
+
+ <div class="col-md-3">
+<div class="card border border-danger bg-dark ">
+    <div class="card-body">
+        <div class="text-center">
+
+            <img src="{{ Judgementy.JudgementComity.Profile_Icon.url }}" alt="image"
+                 class="img-fluid " style="width: 100%; height: 100px">
+            <h5>{{ Com.user }}<br><span class="badge badge-success"
+                                        style="color: black">{{ Judgementy.JudgementComity.FullName }}</span>
+            </h5>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-sm mb-0 f-12 text-white">
+                <tbody>
+                <tr>
+                    <td> الدولة</td>
+                    <td>:{{ Judgementy.JudgementComity.State }}</td>
+                </tr>
+                <tr>
+                    <td> نوع التخصص</td>
+                    <td>:{{ Judgementy.Stages }}</td>
+                </tr>
+                <tr>
+                    <td>التخصص</td>
+                    <td>:{{ Judgementy.MovieSections }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+</div>
+</div>
+    </div>
+
+
+

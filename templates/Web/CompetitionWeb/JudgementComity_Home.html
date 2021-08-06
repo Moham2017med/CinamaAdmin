@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load Profile_check %}
+{% load static %}
+{% load i18n %}
+
+
+ {% block css_body %}
+   <link rel="icon" href="{%static 'assets/images/favicon.ico' %}" type="image/x-icon">
+
+    <!-- prism css -->
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/prism-coy.css'%}">
+    <!-- ekko-lightbox css -->
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/ekko-lightbox.css' %}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/lightbox.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/trumbowyg.min.css'%}">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+
+
+
+ {% endblock css_body %}
+
+{% block content %}
+
+{% include 'Web/Sections/Header.html' %}
+
+    <!-- Hero Section Begin -->
+
+    <section class="video-guide-section">
+
+
+     <div class="container">
+      <div class="section-title text-center " style="background: black;color: red;height: 30px; ">
+                        <h5 style="background: black;color: red;height: 30px; ">{{ movie.MovieSections }}</h5>
+              </div>
+
+            <div class="row">
+
+
+
+                  <!-- profile body start -->
+    <div class="col-sm-12 ">
+
+           <div class="col-md-12 text-center">
+
+        <div class="text-center">
+
+            <img src="{{ Judgementy.JudgementComity.Profile_Icon.url }}" alt="image"
+                 class="img-fluid " style="width: 50%; height: 200px">
+            <h5>{{ Com.user }}<br><span class="badge badge-success p-2 m-2"
+                                        style="color: black ;font-size: 16px">{{ Judgementy.JudgementComity.FullName }}</span>
+            </h5>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-sm mb-0 f-12 text-white">
+                <tbody>
+                <tr>
+                    <td> الدولة</td>
+                    <td>:{{ Judgementy.JudgementComity.State }}</td>
+                </tr>
+                <tr>
+                    <td> نوع التخصص</td>
+                    <td>:{{ Judgementy.Stages }}</td>
+                </tr>
+                <tr>
+                    <td>التخصص</td>
+                    <td>:{{ Judgementy.MovieSections }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                <div CLASS="container">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                        <div class="section-title text-center" style="background: black;color: white">
+                        <h5 >التسابقين</h5>
+              </div>
+
+                            {% for videos in my_videos %}
+
+
+
+                                    {% include 'Web/CompetitionWeb/Participants_1.html' %}
+
+
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-8">
+             <div class="section-title text-center" style="background: black;color: white">
+                        <h5 >فيديوهات المسابقين</h5>
+              </div>
+
+                            {% for videos in my_videos %}
+
+
+                                    {% include 'Web/CompetitionWeb/Video_2.html' %}
+
+                            {% endfor %}
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-------------------------profile-tab--------------------------->
+
+    </div>
+
+    </div>
+
+</div>
+
+     </div>
+    </section>
+{% endblock %}
+
+{% block script_body %}
+<script src="{%static 'assets/js/vendor-all.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/bootstrap.min.js'%}"></script>
+<script src="{%static 'assets/js/ripple.js'%}"></script>
+<script src="{%static 'assets/js/pcoded.min.js'%}"></script>
+<script src="{%static 'assets/js/menu-setting.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/prism.js'%}"></script>
+<script src="{%static 'assets/js/plugins/ekko-lightbox.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/lightbox.min.js'%}"></script>
+<script src="{%static 'assets/js/pages/ac-lightbox.js'%}"></script>
+
+<script src="{%static 'assets/js/plugins/trumbowyg.min.js'%}"></script>
+
+
+{% endblock script_body %}

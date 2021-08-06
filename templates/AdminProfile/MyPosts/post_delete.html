@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+{% block head_title %}المقالات{% endblock %}
+ {% block css_body %}
+   <link rel="icon" href="{%static 'assets/images/favicon.ico' %}" type="image/x-icon">
+
+    <!-- prism css -->
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/prism-coy.css'%}">
+    <!-- ekko-lightbox css -->
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/ekko-lightbox.css' %}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/lightbox.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/trumbowyg.min.css'%}">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+
+
+
+ {% endblock css_body %}
+{% block content %}
+
+
+    <section class="details-post-section spad">
+        <div class="container">
+            <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="card bg-dark border border-danger p-4" >
+
+                            <div class="content-section">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group" style="color: white">
+                <legend class="border-bottom mb-4">حذف المنشور</legend>
+                <h4 style="color: red">هل انت متتأكد من حذف المنشور</h4><br>
+                <h4 style="color: white">'{{object.caption}}'</h4>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">نعم, حذف</button>
+                <a href="{% url 'post_details' object.id %}" class="btn btn-outline-info">ألغاء الامر</a>
+            </div>
+        </form>
+    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+                  </div>
+                </div>
+    </section>
+
+
+
+
+
+{% endblock %}
+
+{% block script_body %}
+<script src="{%static 'assets/js/vendor-all.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/bootstrap.min.js'%}"></script>
+<script src="{%static 'assets/js/ripple.js'%}"></script>
+<script src="{%static 'assets/js/pcoded.min.js'%}"></script>
+<script src="{%static 'assets/js/menu-setting.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/prism.js'%}"></script>
+<script src="{%static 'assets/js/plugins/ekko-lightbox.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/lightbox.min.js'%}"></script>
+<script src="{%static 'assets/js/pages/ac-lightbox.js'%}"></script>
+
+<script src="{%static 'assets/js/plugins/trumbowyg.min.js'%}"></script>
+
+
+
+    <script src="{% static 'assets/js/ajax.js' %}"></script>
+
+
+{% endblock script_body %}

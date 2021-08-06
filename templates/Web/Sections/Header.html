@@ -1,0 +1,146 @@
+ {% load static %}
+{% load Profile_check %}
+{% load i18n %}
+
+   <!-- Humberger Menu Begin -->
+   <div class="humberger-menu-overlay"></div>
+   <div class="humberger-menu-wrapper">
+       <div class="hw-logo">
+           <a href="{% url 'home' %}"><img src="{% static 'img/logCinena.jpeg' %}" alt=""></a>
+
+       </div>
+       <div class="hw-menu mobile-menu">
+           <ul>
+               <li><a href="{% url 'home' %}">الرئسية</a></li>
+               <li><a href="{% url 'JudgementComitysViewWeb' id=2 %}">المسابقات</a>
+
+               </li>
+               <li><a href="{% url 'LecturesViwe' %}">محاضرات</a>
+
+               </li>
+               <li><a href="{% url 'ChannelMyVideosWeb' %}">فيديوهات</a>
+
+               </li>
+               <li><a href="{% url 'postsWeb' %}">منشورات</a>
+
+               </li>
+               <li><a href="{% url 'ArticlesWeb' %}">مقالات</a>
+
+               </li>
+           </ul>
+       </div>
+       <div id="mobile-menu-wrap"></div>
+       <div class="hw-copyright">
+          جميع الحقوق محفوظة / رينا الجريد
+       </div>
+       <div class="hw-social">
+           <a href="{{ cin.Snapchat }}"><i class="fa fa-snapchat"></i></a>
+            <a href="{{ cin.YouTube }}"><i class="fa fa-youtube-play"></i></a>
+            <a href="{{ cin.Instagram }}"><i class="fa fa-instagram"></i></a>
+            <a href="{{ cin.Twitter }}"><i class="fa fa-twitter"></i></a>
+            <a href="{{ cin.Facebook }}"><i class="fa fa-facebook"></i></a>
+       </div>
+       <div class="hw-insta-media">
+           <div class="section-title">
+               <h5>موقع المهرجان</h5>
+           </div>
+           <div class="insta-pic">
+               <img src="{% static 'img/q5.jpeg' %}" alt="" style="height: 120px;width: 100%">
+
+               <img src="{% static 'img/R1.jpeg' %}" alt="" style="height: 120px;width: 100%">
+           </div>
+       </div>
+   </div>
+   <!-- Humberger Menu End -->
+
+   <!-- Header Section Begin -->
+   <header class="header-section">
+       <div class="ht-options">
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-12 ">
+                       <div class="ht-widget">
+                           <ul>
+
+                           <li><a href="{{ cin.Snapchat }}"><i class="fa fa-snapchat"></i></a></li>
+                           <li> <a href="{{ cin.YouTube }}"><i class="fa fa-youtube-play"></i></a></li>
+                           <li><a href="{{ cin.Instagram }}"><i class="fa fa-instagram"></i></a></li>
+                           <li><a href="{{ cin.Twitter }}"><i class="fa fa-twitter"></i></a></li>
+                           <li><a href="{{ cin.Facebook }}"><i class="fa fa-facebook"></i></a></li>
+
+                             {% if user.is_authenticated %}
+
+                                    <li><a href="{% url 'account_logout' %}" style="color: red"><i class="fa fa-sign-out"></i> تسجيل خروج</a></li>
+                                    {% if request.user|has_profile %}
+                                        <li><a href="{% url 'ProfileViwe' %}" ><i class="fa icon_profile"></i> ورشة عمل</a></li>
+                                        <li><a href="#" ><i class="fa icon_profile"></i></a></li>
+                                        <li><a href="{% url 'indexHomeUser' request.user %}" >الملف الشخصي</a></li>
+                                        {% else %}
+                                        <li><a href="{% url 'ProfileInfo'  %}" style="color: red"><i class="fa fa-clock-o"></i> أشتراك </a></li>
+                                        {% endif %}
+
+                                {% else %}
+
+                                    <a href="{% url 'account_login' %}"><i class="fa fa-clock-o"></i> تسجيل دخول</a>
+                                    <a href="{% url 'account_signup' %}"><i class="fa fa-clock-o"></i> تسجيل حساب</a>
+                                {% endif %}
+
+
+
+
+                           </ul>
+                       </div>
+                   </div>
+
+
+
+
+                       </div>
+                   </div>
+               </div>
+
+       <div class="logo" style="background: black;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center" style="background: black ; ">
+                       <a href="{% url 'home'  %}"><img src="{% static 'img/logCinena.jpeg' %}" alt="" style="height: 120px "></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+       <div class="nav-options">
+           <div class="container">
+               <div class="humberger-menu humberger-open">
+                   <i class="fa fa-bars"></i>
+               </div>
+               <div class="nav-search search-switch">
+                   <i class="fa fa-search"></i>
+               </div>
+               <div class="nav-menu">
+                   <ul>
+                       <li class="active"><a href="{% url 'home' %}"><span>الرئسية</span></a></li>
+                    <li>
+                           <a href="{% url 'JudgementComitysViewWeb' id=2 %}"><span>المسابقات</span></a>
+
+                       </li>
+
+                       <li>
+                           <a href="{% url 'LecturesViwe' %}"><span>محاضرات</span></a>
+
+                       </li>
+                       <li><a href="{% url 'ChannelMyVideosWeb' %}"><span>فيديوهات</span></a></li>
+                       <li><a href="{% url 'postsWeb' %}"><span>منشورات </span></a></li>
+                       <li><a href="{% url 'ArticlesWeb' %}"><span>مقالات </span></a></li>
+
+                   </ul>
+               </div>
+           </div>
+       </div>
+
+   </header>
+   <!-- Header End -->

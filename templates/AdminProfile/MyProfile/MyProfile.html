@@ -1,0 +1,870 @@
+{% extends 'AdminProfile/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block Content %}
+    <div class="pcoded-content">
+        <div class="pcoded-main-container">
+
+            <!-- profile header start -->
+            <div class="user-profile user-card mb-4">
+                <div class="card-header border-0 p-0 pb-0">
+                    <div class="cover-img-block">
+                        <!-- <img src="{%static 'assets/images/profile/cover.jpg' %}" alt="" class="img-fluid"> -->
+                        <div class="overlay"></div>
+                        <div class="change-cover">
+                            <div class="dropdown">
+                                <a class="drp-icon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false"><i class="icon feather icon-camera"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#"><i class="feather icon-upload-cloud mr-2"></i>upload
+                                        new</a>
+                                    <a class="dropdown-item" href="#"><i class="feather icon-image mr-2"></i>from photos</a>
+                                    <a class="dropdown-item" href="#"><i class="feather icon-film mr-2"></i> upload
+                                        video</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="feather icon-trash-2 mr-2"></i>remove</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body py-0">
+                    <div class="user-about-block m-0">
+                        <div class="row">
+                            <div class="col-md-4 text-center mt-n5">
+                                <div class="change-profile text-center">
+                                    <div class="dropdown w-auto d-inline-block">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                           aria-expanded="false">
+                                            <div class="profile-dp">
+                                                <div class="position-relative d-inline-block">
+                                                    <img class="img-radius  wid-100" height="200px"
+                                                         src="{{ MyPro.Profile_Icon.url }}" alt="User image">
+                                                </div>
+                                                <div class="overlay">
+                                                    <span>change</span>
+                                                </div>
+                                            </div>
+                                            <div class="certificated-badge">
+                                                <i class="fas fa-certificate text-c-blue bg-icon"></i>
+                                                <i class="fas fa-check front-icon text-white"></i>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="feather icon-upload-cloud mr-2"></i>upload new</a>
+                                            <a class="dropdown-item" href="#"><i class="feather icon-image mr-2"></i>from
+                                                photos</a>
+                                            <a class="dropdown-item" href="#"><i class="feather icon-shield mr-2"></i>Protact</a>
+                                            <a class="dropdown-item" href="#"><i class="feather icon-trash-2 mr-2"></i>remove</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h5 class="mb-1">{{ MyPro.FullName }} </h5>
+                                <p class="mb-2 text-muted">{{ MyPro.SpecialtyType.SpecialtyType }}
+                                    _ {{ MyPro.Specialty.Specialty }}</p>
+
+                            </div>
+                            <div class="col-md-8 mt-md-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="#!" class="mb-1 text-muted d-flex align-items-end text-h-primary"><i
+                                                class="feather icon-globe mr-2 f-18"></i>www.CinemaOnline.com</a>
+                                        <div class="clearfix"></div>
+                                        <a href="mailto:demo@domain.com"
+                                           class="mb-1 text-muted d-flex align-items-end text-h-primary"><i
+                                                class="feather icon-mail mr-2 f-18"></i>{{ MyPro.user.email }}</a>
+                                        <div class="clearfix"></div>
+                                        <a href="#!" class="mb-1 text-muted d-flex align-items-end text-h-primary"><i
+                                                class="feather icon-phone mr-2 f-18"></i>{{ MyPro.Phone }}</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="media">
+                                            <i class="feather icon-map-pin mr-2 mt-1 f-18"></i>
+                                            <div class="media-body">
+
+                                                <p class="mb-0 text-muted">{{ MyPro.State.State }}</p>
+                                                <p class="mb-0 text-muted">{{ MyPro.address }}</p>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs profile-tabs nav-fill" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-reset active" id="home-tab" data-toggle="tab"
+                                           href="#home" role="tab" aria-controls="home" aria-selected="true"><i
+                                                class="feather icon-home mr-2"></i>{% trans 'Home' %}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-reset" id="profile-tab" data-toggle="tab"
+                                           href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i
+                                                class="feather icon-user mr-2"></i>{% trans 'Profile' %}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-reset" id="contact-tab" data-toggle="tab"
+                                           href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i
+                                                class="feather icon-phone mr-2"></i>{% trans 'My Contacts' %}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-reset" id="gallery-tab" data-toggle="tab"
+                                           href="#gallery" role="tab" aria-controls="gallery" aria-selected="false"><i
+                                                class="feather icon-image mr-2"></i>{% trans 'Gallery' %}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- profile header end -->
+
+            <!-- profile body start -->
+            <div class="row">
+                <div class="col-md-8 order-md-2">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="container">
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <div class="card user-card user-card-1">
+                                            <div class="card-header border-0 p-2 pb-0">
+                                                <div class="cover-img-block">
+                                                    <img src="{{ MyPro.Profile_Art.url }}" alt=""
+                                                         style="height:150px ; width:100%">
+                                                </div>
+                                            </div>
+                                            <div class="card-body pt-0">
+                                                <div class="user-about-block text-center">
+                                                    <div class="row align-items-end">
+                                                        <div class="col"></div>
+                                                        <div class="col">
+                                                            <div class="position-relative d-inline-block">
+                                                                <img class="img-radius img-fluid wid-80"
+                                                                     src="{{ MyPro.Profile_Icon.url }}"
+                                                                     alt="User image">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+                                                    <h6 class="mb-1 mt-3">{{ MyPro.FullName }}</h6>
+                                                    <p class="mb-1 text-muted">{{ MyPro.SpecialtyType }}
+                                                        _ {{ MyPro.Specialty }}</p>
+                                                    <p class="mb-1">{{ MyPro.State }}</p>
+                                                    <p class="mb-0">{{ MyPro.description }}</p>
+                                                </div>
+                                                <hr class="wid-80 b-wid-3 my-4">
+                                                <div class="row text-center">
+                                                    <div class="col">
+                                                        <h6 class="mb-1">37</h6>
+                                                        <p class="mb-0">Mails</p>
+                                                    </div>
+                                                    <div class="col">
+
+                                                        <h6 class="mb-1">{{ MyPro.num_subcribers }}</h6>
+                                                        <p class="mb-0">Followers</p>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mb-1">{{ Following }}</h6>
+                                                        <p class="mb-0">Following</p>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body hover-data text-white">
+                                                <div class="">
+                                                    <h4 class="text-white">{{ MyPro.num_subcribers }}</h4>
+                                                    <p class="mb-1">this Following Profile </p>
+                                                    {% if request.user == MyPro.user.user %}
+                                                        <div>
+                                                            <button type="button" disabled
+                                                                    class="px-8  py-3 bg-red-700 text-white font-medium text-l border border-gray-400">
+                                                                أشترك
+                                                            </button>
+                                                        </div>
+
+                                                    {% else %}
+
+
+                                                        {% if user in MyPro.subcribers.all %}
+                                                            <form action="{% url 'subscriber' %}" method="POST"
+                                                                  class="Subcriber_form">
+                                                                {% csrf_token %}
+                                                                <button type="submit" name="channel_id"
+                                                                        value="{{ MyPro.id }}"
+                                                                        class="btn waves-effect waves-light btn-danger  sub-btn  bg-gray-600  border border-gray-400">
+                                                                    إلغاء المتابعة
+                                                                </button>
+
+                                                            </form>
+                                                        {% else %}
+                                                            <form action="{% url 'subscriber' %}" method="POST"
+                                                                  class="Subcriber_form">
+                                                                {% csrf_token %}
+                                                                <button type="submit" name="channel_id"
+                                                                        value="{{ MyPro.id }}"
+                                                                        class="btn waves-effect waves-light btn-success  sub-btn  bg-red-700   border border-gray-400">
+                                                                    متابعة
+                                                                </button>
+                                                            </form>
+                                                        {% endif %}
+                                                    {% endif %}
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="card">
+                                <div class="row">
+                                    {% for post in posts %}
+                                        <div class="col-md-12 order-md-2 p-4" style="background: black">
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                                     aria-labelledby="home-tab">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <div class="post_options"><a
+                                                                    href="{% url 'post_details' post.id %}">
+                                                                <svg class="bi bi-three-dots" width="1em" height="1em"
+                                                                     viewBox="0 0 16 16" fill="currentColor"
+                                                                     xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd"
+                                                                          d="M3 9.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
+                                                                          clip-rule="evenodd"/>
+
+
+                                                                </svg>
+                                                            </a></div>
+                                                            <h5 class="font-weight-normal"><a href="#!"
+                                                                                              class="text-h-primary text-reset"><b
+                                                                    class="font-weight-bolder"
+                                                                    style="color: red">{{ post.author.username }}</b></a>
+                                                                posted on your timeline</h5>
+                                                            <p class="mb-0 text-muted">{{ post.created_date }}</p>
+                                                            <div class="card-header-right">
+                                                                <div class="btn-group card-option">
+                                                                    <button type="button" class="btn dropdown-toggle"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false">
+                                                                        <i class="feather icon-more-horizontal"></i>
+                                                                    </button>
+
+
+                                                                    <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                                                        <li class="dropdown-item full-card"><a
+                                                                                href="#!"><span><i
+                                                                                class="feather icon-maximize"></i> maximize</span><span
+                                                                                style="display:none"><i
+                                                                                class="feather icon-minimize"></i> Restore</span></a>
+                                                                        </li>
+                                                                        <li class="dropdown-item minimize-card"><a
+                                                                                href="#!"><span><i
+                                                                                class="feather icon-minus"></i> collapse</span><span
+                                                                                style="display:none"><i
+                                                                                class="feather icon-plus"></i> expand</span></a>
+                                                                        </li>
+                                                                        <li class="dropdown-item reload-card"><a
+                                                                                href="#!"><i
+                                                                                class="feather icon-refresh-cw"></i>
+                                                                            reload</a>
+                                                                        </li>
+                                                                        <li class="dropdown-item close-card"><a
+                                                                                href="#!"><i
+                                                                                class="feather icon-trash"></i>
+                                                                            remove</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {% if post.image %}
+
+
+                                                            <a href="{% url 'post_details' post.id %}"> <img
+                                                                    src="{{ post.image.url }}" alt=""
+                                                                    style="width: 100%;height:300px"
+                                                                    class="img-fluid"></a>
+                                                        {% endif %}
+
+                                                        {% if post.video %}
+                                                            <a href="{% url 'post_details' post.id %}">
+                                                                <video src="{{ post.video.url }}" controls height="100%"
+                                                                       width="100%"></video>
+                                                            </a>
+                                                        {% endif %}
+
+                                                        <div class="card-body">
+                                                            <a href="#!" class="text-h-primary">
+                                                                <h6>{{ post.profile.FullName }}</h6>
+                                                            </a>
+                                                            <p class="text-muted mb-0">{{ post.caption }}</p>
+                                                        </div>
+                                                        <div class="card-body border-top border-bottom">
+                                                            <ul class="list-inline m-0">
+                                                                <form action="{% url 'like_post' %}" method="POST"
+                                                                      class="ui form">
+                                                                    {% csrf_token %}
+                                                                    <input type="hidden" name="post_id"
+                                                                           value="{{ post.id }}">
+                                                                    {% if user not in post.liked.all %}
+                                                                        <li class="list-inline-item">
+                                                                            <button
+                                                                                    class="text-danger text-h-danger"><i
+                                                                                    class="feather icon-heart-on mr-2"
+                                                                                    style="color: green"></i>{{ post.liked.all.count }}
+                                                                            </button>
+                                                                        </li>
+                                                                    {% else %}
+                                                                        <li class="list-inline-item">
+                                                                            <button
+                                                                                    class="text-danger text-h-danger"><i
+                                                                                    class="feather icon-heart-on mr-2"></i>{{ post.liked.all.count }}
+                                                                            </button>
+                                                                        </li>
+
+                                                                    {% endif %}
+                                                                    <li class="list-inline-item"><a href="#!"
+                                                                                                    class="text-muted text-h-primary"><i
+                                                                            class="feather icon-share-2 mr-2"></i>Share</a>
+                                                                    </li>
+                                                                </form>
+
+                                                            </ul>
+                                                            <form id="favoriteform" action="{% url 'favourite' %}"
+                                                                  method="POST"
+                                                                  class="ui form">
+                                                                {% csrf_token %}
+                                                                <input type="hidden" name="post_id"
+                                                                       value="{{ post.id }}">
+                                                                {% if user not in post.favourite.all %}
+
+
+                                                                    <div class="engagement text-right">
+
+                                                                        <button class="btn-success"
+                                                                                style="background-color: red; color: black">
+
+
+                                                                            <a href="javascript:void()"
+                                                                               onclick="document.getElementById('favoriteform').submit();">
+                                                                                <i class="feather icon-file"
+                                                                                   style=" color: black"></i>
+                                                                            </a></button>
+                                                                    </div>
+
+
+
+                                                                    <!-- <button class="btn btn-success btn-sm">Save</button> -->
+                                                                {% else %}
+                                                                    <div class="engagement text-right">
+
+                                                                        <button class="btn-success"
+                                                                                style="background-color: green; color: black">
+
+
+                                                                            <a href="javascript:void()"
+                                                                               onclick="document.getElementById('favoriteform').submit();">
+                                                                                <i class="feather icon-file"
+                                                                                   style=" color: black"></i>
+
+
+                                                                            </a></button>
+                                                                    </div>
+                                                                    <!-- <button class="btn btn-danger btn-sm">Saved</button> -->
+                                                                {% endif %}
+
+
+                                                            </form>
+
+                                                        </div>
+
+                                                        <div class="card-body">
+                                                            <div class="row justify-content-between mb-4">
+                                                                <div class="col-auto"><a href="#!"
+                                                                                         class="text-muted text-h-primary">Comment
+                                                                    (<i
+                                                                            class="feather icon-message-square mr-2"></i>{{ post.number_of_comments }})</a>
+                                                                </div>
+                                                                <div class="col-auto"><a href="#!"
+                                                                                         class="text-muted text-h-primary">See
+                                                                    All</a></div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-------------------------profile-tab--------------------------->
+
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="card">
+                                <div class="card-body d-flex align-items-center justify-content-between">
+                                    <h5 class="mb-0">{% trans 'Personal details' %}</h5>
+                                    <button type="button" class="btn btn-primary btn-sm rounded m-0 float-right"
+                                            data-toggle="collapse" data-target=".pro-det-edit" aria-expanded="false"
+                                            aria-controls="pro-det-edit-1 pro-det-edit-2">
+                                        <i class="feather icon-edit"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body border-top pro-det-edit collapse show" id="pro-det-edit-1">
+                                    <form>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Full Name' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.FullName }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Gender' %}</label>
+                                            <div class="col-sm-9">
+                                                {% if MyPro.gender == True %}
+                                                    <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'female' %}</label>
+                                                {% else %}
+                                                    <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'male' %}</label>
+
+                                                {% endif %}
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Age group' %}</label>
+                                            <div class="col-sm-9">
+                                                {% if MyPro.age == True %}
+                                                    <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Over 18 years old' %}</label>
+                                                {% else %}
+                                                    <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Under 18 years old' %}</label>
+
+                                                {% endif %}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Address' %}</label>
+                                            <div class="col-sm-9">
+                                                <p class="mb-0 text-muted">{{ MyPro.State }}</p>
+                                                <p class="mb-0 text-muted">{{ MyPro.description }} </p>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-body border-top pro-det-edit collapse " id="pro-det-edit-2">
+                                    <form action="." method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Fill Name arbic' %}</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" placeholder="Full Name"
+                                                       name="FullName" value="{{ edit_form.FullName.value }}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Gender' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ edit_form.gender }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Age group' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ edit_form.age }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Address' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ edit_form.State }}
+                                                {{ edit_form.address }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'description' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ edit_form.description }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label"></label>
+                                            <div class="col-sm-9">
+                                                <button type="submit"
+                                                        class="btn btn-primary">{% trans 'Save' %}</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--------------------end-----profile-tab--------------------------->
+
+                            <!--------------------Stert-----Contact Information-tab--------------------------->
+
+                            <div class="card">
+                                <div class="card-body d-flex align-items-center justify-content-between">
+                                    <h5 class="mb-0">{% trans 'Contact Information' %}</h5>
+                                    <button type="button" class="btn btn-primary btn-sm rounded m-0 float-right"
+                                            data-toggle="collapse" data-target=".pro-dont-edit" aria-expanded="false"
+                                            aria-controls="pro-dont-edit-1 pro-dont-edit-2">
+                                        <i class="feather icon-edit"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body border-top pro-dont-edit collapse show" id="pro-dont-edit-1">
+                                    <form>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Mobile Number' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.Phone }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Email Address' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.emaiAddress }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'ZOOM' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.Zoom }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Skype' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.Skype }}
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-body border-top pro-dont-edit collapse " id="pro-dont-edit-2">
+                                    <form action=" " method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Mobile Number' %}</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" placeholder="Full Name"
+                                                       name="Phone" value="{{ edit_form.Phone.value }}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Email Address' %}</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" placeholder="Ema"
+                                                       name="emaiAddress" value="{{ edit_form.emaiAddress.value }}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'ZOOM' %}</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" placeholder="Full Name"
+                                                       name="Zoom" value="{{ edit_form.Zoom.value }}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Skype' %}</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" placeholder="Full Name"
+                                                       name="Skype" value="{{ edit_form.Skype.value }}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label"></label>
+                                            <div class="col-sm-9">
+                                                <button type="submit"
+                                                        class="btn btn-primary">{% trans 'Save' %}</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body d-flex align-items-center justify-content-between">
+                                    <h5 class="mb-0">{% trans 'Social Media Information' %}</h5>
+                                    <button type="button" class="btn btn-primary btn-sm rounded m-0 float-right"
+                                            data-toggle="collapse" data-target=".pro-wrk-edit" aria-expanded="false"
+                                            aria-controls="pro-wrk-edit-1 pro-wrk-edit-2">
+                                        <i class="feather icon-edit"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body border-top pro-wrk-edit collapse show" id="pro-wrk-edit-1">
+                                    <form>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'YouTube' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.YouTube }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Instagram' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.Instagram }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Snapchat' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.Snapchat }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Twitter' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.Twitter }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Facebook' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ MyPro.Facebook }}
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-body border-top pro-wrk-edit collapse " id="pro-wrk-edit-01">
+                                    <form action=" " method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'YouTube' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ edit_form.YouTube }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Instagram' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ edit_form.Instagram }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Snapchat' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ edit_form.Snapchat }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Twitter' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ edit_form.Twitter }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label font-weight-bolder">{% trans 'Facebook' %}</label>
+                                            <div class="col-sm-9">
+                                                {{ edit_form.Facebook }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label"></label>
+                                            <div class="col-sm-9">
+                                                <button type="submit"
+                                                        class="btn btn-primary">{% trans 'Save' %}</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="row">
+                                {% for pro in profile %}
+                                    <div class="col-md-6">
+
+                                        <div class="card user-card user-card-1">
+                                            <div class="card-header border-0 p-2 pb-0">
+                                                <div class="cover-img-block">
+                                                    <img src="{{ pro.Profile_Art.url }}" alt=""
+                                                         style="height:150px ; width:100%">
+                                                </div>
+                                            </div>
+                                            <div class="card-body pt-0">
+                                                <div class="user-about-block text-center">
+                                                    <div class="row align-items-end">
+                                                        <div class="col"></div>
+                                                        <div class="col">
+                                                            <div class="position-relative d-inline-block">
+                                                                <img class="img-radius img-fluid wid-80 ا"
+                                                                     src="{{ pro.Profile_Icon.url }}"
+                                                                     alt="User image">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+                                                    <h6 class="mb-1 mt-3">{{ pro.FullName }}</h6>
+                                                    <p class="mb-1 text-muted">{{ pro.SpecialtyType }}
+                                                        _ {{ pro.Specialty }}</p>
+                                                    <p class="mb-1">{{ pro.State }}</p>
+                                                    <p class="mb-0">{{ pro.description }}</p>
+                                                </div>
+                                                <hr class="wid-80 b-wid-3 my-4">
+                                                <div class="row text-center">
+                                                    <div class="col">
+                                                        <h6 class="mb-1">37</h6>
+                                                        <p class="mb-0">Mails</p>
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mb-1">{{ MyPro.num_subcribers }}</h6>
+                                                        <p class="mb-0">Followers</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body hover-data text-white">
+                                                <div class="">
+                                                    <h4 class="text-white"> This Profile Name {{ MyPro.FullName }}?</h4>
+                                                    <p class="mb-1">Name {{ MyPro.FullName }}</p>
+
+
+                                                    <a href="{% url 'friends' pro.slug %}"
+                                                       class="btn waves-effect waves-light btn-warning"><i
+                                                            class="feather icon-link"></i>
+                                                        Profile
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+                <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
+                    <div class="row text-center">
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <a href="{% static 'assets/images/light-box/l1.jpg' %}" data-lightbox="roadtrip"><img
+                                    src="{% static 'assets/images/light-box/sl1.jpg' %}"
+                                    class="img-fluid m-b-10 img-thumbnail bg-white" alt=""></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <a href="{% static 'assets/images/light-box/l2.jpg' %}" data-lightbox="roadtrip"><img
+                                    src="{% static 'assets/images/light-box/sl2.jpg' %}"
+                                    class="img-fluid m-b-10 img-thumbnail bg-white" alt=""></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <a href="{% static 'assets/images/light-box/l3.jpg' %}" data-lightbox="roadtrip"><img
+                                    src="{% static 'assets/images/light-box/sl3.jpg' %}"
+                                    class="img-fluid m-b-10 img-thumbnail bg-white" alt=""></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <a href="{% static 'assets/images/light-box/l4.jpg' %}" data-lightbox="roadtrip"><img
+                                    src="{% static 'assets/images/light-box/sl4.jpg' %}"
+                                    class="img-fluid m-b-10 img-thumbnail bg-white" alt=""></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <a href="{% static 'assets/images/light-box/l5.jpg' %}" data-lightbox="roadtrip"><img
+                                    src="{% static 'assets/images/light-box/sl5.jpg' %}"
+                                    class="img-fluid m-b-10 img-thumbnail bg-white" alt=""></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <a href="{% static 'assets/images/light-box/l6.jpg' %}" data-lightbox="roadtrip"><img
+                                    src="{% static 'assets/images/light-box/sl6.jpg' %}"
+                                    class="img-fluid m-b-10 img-thumbnail bg-white" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 order-md-1">
+            <div class="card">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="mb-0">Friends</h5>
+                    <span class="badge badge-light-primary float-right">100+</span>
+                </div>
+                <div class="card-body">
+                    <ul class="list-inline">
+                        {% for frn in friending %}
+                            <li class="list-inline-item"><a href="#!"><img
+                                    src="{{ frn.Profile_Icon.url }}" alt="user image"
+                                    class="img-radius mb-2 wid-50" data-toggle="tooltip" title=""
+                                    data-original-title={{ frn.FullName }}></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="card new-cust-card">
+                <div class="card-header">
+                    <h5>Message</h5>
+                    <div class="card-header-right">
+                        <div class="btn-group card-option">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <i class="feather icon-more-horizontal"></i>
+                            </button>
+                            <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-item full-card"><a href="#!"><span><i
+                                        class="feather icon-maximize"></i> maximize</span><span style="display:none"><i
+                                        class="feather icon-minimize"></i> Restore</span></a></li>
+                                <li class="dropdown-item minimize-card"><a href="#!"><span><i
+                                        class="feather icon-minus"></i> collapse</span><span style="display:none"><i
+                                        class="feather icon-plus"></i> expand</span></a></li>
+                                <li class="dropdown-item reload-card"><a href="#!"><i
+                                        class="feather icon-refresh-cw"></i> reload</a></li>
+                                <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i>
+                                    remove</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="cust-scroll ps ps--active-y" style="height:415px;position:relative;">
+                    <div class="card-body p-b-0">
+                        {% for frn in friending %}
+                            <div class="align-middle m-b-25">
+                                <img src="{{ frn.Profile_Icon.url }}" alt="user image"
+                                     class="img-radius align-top m-r-15">
+                                <div class="d-inline-block">
+                                    <a href="#!">
+                                        <h6>{{ frn.FullName }}</h6>
+                                    </a>
+                                    <p class="m-b-0">{{ frn.Specialty }}</p>
+                                    <span class="status active"></span>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                    </div>
+                    <div class="ps__rail-y" style="top: 0px; height: 415px; right: 0px;">
+                        <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 321px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- profile body end -->
+    </div>
+    </div>
+
+
+{% endblock Content %}
+

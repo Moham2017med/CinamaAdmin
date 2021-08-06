@@ -1,0 +1,29 @@
+{% load static %}
+{% if po.image %}
+    <div class="un-big-item set-bg" data-setbg="{{ po.image.url }}">
+
+        <div class="ub-text">
+            <div class="label"><span>{{ po.profile.FullName }} _ {{ po.profile.Specialty }}</span></div>
+            <h5 style="color: black"><a href="{% url 'PostDetailViewWeb' po.id %}">{{ po.caption }}</a>Post</h5>
+            <ul>
+                <li>by <span>{{ po.created_date }}</span></li>
+                <li><i class="fa fa-clock-o"></i>{{ po.num_likes }}</li>
+                <li><i class="fa fa-comment-o"></i> {{ po.number_of_comments }}</li>
+            </ul>
+        </div>
+    </div>
+{% endif %}
+{% if po.video %}
+    <div class="un-big-item set-bg" data-setbg="{{ po.imageVideo.url }}">
+
+        <div class="ub-text">
+            <div class="label"><span>{{ po.profile.FullName }} _ {{ po.profile.Specialty }}</span></div>
+            <h5 style="color: black"><a href="{% url 'PostDetailViewWeb' po.id %}">{{ po.caption }}</a>Post</h5>
+            <ul>
+                <li>by <span>{{ po.created_date }}</span></li>
+                <li><i class="fa fa-clock-o"></i>{{ po.num_likes }}</li>
+                <li><i class="fa fa-comment-o"></i> {{ po.number_of_comments }}</li>
+            </ul>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,213 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!-- Update News Section Begin -->
+<section class="update-news-section">
+    <div class="container">
+        <div class="section-title text-center" style="background: red">
+            <h5><span>قسم المنشورات</span></h5>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h5><span></span></h5>
+                </div>
+                <div class="tab-elem">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">جميع المنشورات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">منشورات متميزة</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">منشورات الادارة</a>
+                        </li>
+
+                    </ul><!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="tabs-1" role="tabpanel">
+                            <div class="row">
+                                <div class="un-slider owl-carousel">
+                                    <div class="col-lg-12">
+                                        {% for po in post|slice:"0:1" %}
+                                            {% if po.is_active == True %}
+
+                                                {% include 'Web/Sections/Posts_1.html' %}
+
+
+                                            {% endif %}
+                                        {% endfor %}
+                                        <div class="row">
+                                            {% for po in post|slice:"2:5" %}
+                                                {% if po.is_active == True %}
+
+                                                    {% include 'Web/Sections/Posts_2.html' %}
+
+
+                                                {% endif %}
+
+                                            {% endfor %}
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        {% for po in post|slice:"1:2" %}
+                                            {% if po.is_active == True %}
+
+                                                {% include 'Web/Sections/Posts_1.html' %}
+
+
+                                            {% endif %}
+                                        {% endfor %}
+                                        <div class="row">
+                                            {% for po in post|slice:"5:8" %}
+                                                {% if po.is_active == True %}
+
+                                                    {% include 'Web/Sections/Posts_2.html' %}
+
+
+                                                {% endif %}
+                                            {% endfor %}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="tab-pane fade" id="tabs-2" role="tabpanel">
+
+                            <div class="row">
+                                <div class="un-slider owl-carousel">
+                                    <div class="col-lg-12">
+                                        {% for po in post|slice:"0:1" %}
+                                            {% if po.is_active == True %}
+                                                {% if po.is_Site_1 == True %}
+
+                                                    {% include 'Web/Sections/Posts_1.html' %}
+
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <div class="row">
+                                            {% for po in post|slice:"2:5" %}
+                                                {% if po.is_active == True %}
+                                                    {% if po.is_Site_1 == True %}
+
+                                                        {% include 'Web/Sections/Posts_2.html' %}
+
+
+                                                    {% endif %}
+                                                {% endif %}
+
+                                            {% endfor %}
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        {% for po in post|slice:"1:2" %}
+                                            {% if po.is_active == True %}
+                                                {% if po.is_Site_1 == True %}
+
+                                                    {% include 'Web/Sections/Posts_1.html' %}
+
+
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <div class="row">
+                                            {% for po in post|slice:"5:8" %}
+                                                {% if po.is_active == True %}
+                                                    {% if po.is_Site_1 == True %}
+
+                                                        {% include 'Web/Sections/Posts_2.html' %}
+
+
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="tab-pane fade" id="tabs-3" role="tabpanel">
+
+                            <div class="row">
+                                <div class="un-slider owl-carousel">
+                                    <div class="col-lg-12">
+                                        {% for po in post|slice:"0:1" %}
+                                            {% if po.is_active == True %}
+                                                {% if po.is_Site_2 == True %}
+
+                                                    {% include 'Web/Sections/Posts_1.html' %}
+
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <div class="row">
+                                            {% for po in post|slice:"2:5" %}
+                                                {% if po.is_active == True %}
+                                                    {% if po.is_Site_2 == True %}
+
+                                                        {% include 'Web/Sections/Posts_2.html' %}
+
+
+                                                    {% endif %}
+                                                {% endif %}
+
+                                            {% endfor %}
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        {% for po in post|slice:"1:2" %}
+                                            {% if po.is_active == True %}
+                                                {% if po.is_Site_2 == True %}
+
+                                                    {% include 'Web/Sections/Posts_1.html' %}
+
+
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <div class="row">
+                                            {% for po in post|slice:"5:8" %}
+                                                {% if po.is_active == True %}
+                                                    {% if po.is_Site_2 == True %}
+
+                                                        {% include 'Web/Sections/Posts_2.html' %}
+
+
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>

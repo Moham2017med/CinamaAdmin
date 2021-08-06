@@ -1,0 +1,134 @@
+ {% load static %}
+
+<div class="card">
+      <div class="card-header d-flex align-items-center justify-content-between ">
+        <a href="{% url 'AddVideo_Participants'  %}" class="btn btn-danger " style="width: 100%">أضافة فيديو المرحلة الثانية</a>
+    </div>
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <div class="position-relative d-inline-block">
+                                                <img class="img-radius  wid-100"
+                                                     src="{{ MyPro.Profile_Icon.url }}" alt="User image">
+                                            </div>
+                                            <h5>{{ MyPro.SpecialtyType }}<br><span class="badge badge-success" style="color: black">ممبروك أنت متأهل</span>
+                                            </h5>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm mb-0">
+                                                <tbody>
+
+                                                <tr class="border-bottom" style="background: royalblue; color: black">
+                                                    <td>التصويت الموقع</td>
+                                                    <td style="background: #b3b7bb"> :  10 %</td>
+                                                </tr>
+
+                                                <tr class="border-bottom" style="background: royalblue; color: black">
+                                                    <td>مشاهدات أعجابات</td>
+                                                    <td style="background: #b3b7bb"> :  30 %</td>
+                                                </tr>
+                                                <tr class="border-bottom" style="background: royalblue; color: black">
+                                                    <td>تقيم لجنة التحكيم</td>
+                                                    <td style="background: #b3b7bb"> :  60 %</td>
+                                                </tr>
+                                                <tr class="border-bottom" style="background: bisque; color: black">
+                                                    <td>النتيجة النهائية الفيديو</td>
+                                                    <td style="background: bisque"> :  100 %</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>مشاهدات اليوتيوب</td>
+                                                    <td> : 1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>أعجاب اليوتيوب</td>
+                                                    <td> : 1000</td>
+                                                </tr>
+                                                <tr  class="border-bottom" style="background: rosybrown; color: black">
+                                                    <td>مجموع نتائج اليوتيوب</td>
+                                                    <td> : 2000</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>مشاهدات الموقع</td>
+                                                    <td> : 1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>أعجاب الموقع</td>
+                                                    <td> : 1000</td>
+                                                </tr>
+                                                <tr  class="border-bottom" style="background: rosybrown; color: black">
+                                                    <td>مجموع نتائج الموقع</td>
+                                                    <td> : 2000</td>
+                                                </tr>
+                                                
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card new-cust-card">
+    <div class="card-header">
+        <h5>لجنة التحكيم</h5>
+        <div class="card-header-right">
+            <div class="btn-group card-option">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <i class="feather icon-more-horizontal"></i>
+                </button>
+                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                    <li class="dropdown-item full-card"><a href="#!"><span><i
+                            class="feather icon-maximize"></i> maximize</span><span style="display:none"><i
+                            class="feather icon-minimize"></i> Restore</span></a></li>
+                    <li class="dropdown-item minimize-card"><a href="#!"><span><i
+                            class="feather icon-minus"></i> collapse</span><span style="display:none"><i
+                            class="feather icon-plus"></i> expand</span></a></li>
+                    <li class="dropdown-item reload-card"><a href="#!"><i
+                            class="feather icon-refresh-cw"></i> reload</a></li>
+                    <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i>
+                        remove</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cust-scroll ps ps--active-y" style="height:415px;position:relative;">
+        <div class="card-body p-b-0">
+            {% for frn in friending %}
+                <div class="align-middle m-b-25">
+                    <img src="{{ frn.Profile_Icon.url }}" alt="user image"
+                         class="img-radius align-top m-r-15">
+                    <div class="d-inline-block">
+                        <a href="#!">
+                            <h6>{{ frn.FullName }}</h6>
+                        </a>
+                        <p class="m-b-0">{{ frn.Specialty }}</p>
+                       <span class="status active"></span>
+                    </div>
+                </div>
+                 <p class="text-center" style="background: #b3b7bb;color: black" >60 %</p>
+            {% endfor %}
+
+        </div>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; height: 415px; right: 0px;">
+            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 321px;"></div>
+        </div>
+    </div>
+</div>

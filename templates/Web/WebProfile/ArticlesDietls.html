@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block head_title %}منشور{% endblock %}
+ {% block css_body %}
+   <link rel="icon" href="{%static 'assets/images/favicon.ico' %}" type="image/x-icon">
+
+    <!-- prism css -->
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/prism-coy.css'%}">
+    <!-- ekko-lightbox css -->
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/ekko-lightbox.css' %}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/lightbox.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/trumbowyg.min.css'%}">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+
+
+
+ {% endblock css_body %}
+{% block content %}
+    {% include 'Web/Sections/Header.html' %}
+
+    <section class="details-post-section spad">
+        <div class="container">
+        <div class="text-center p-4">
+              {% if posts.author == user %}
+
+            <a href="{% url 'post-updateArticles' posts.id %}"
+                   class="btn btn-outline-danger">Update</a>
+
+            <a href="{% url 'post_deleteArticles' posts.id %}"
+               class="btn btn-outline-info">Delete</a>
+        {% endif %}
+        </div>
+            <div class="row">
+                 <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card bg-dark border border-danger">
+
+                            <div class="row">
+                                <div class="col-md-12 order-md-2">
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                             aria-labelledby="home-tab">
+                                            <div class="card border-danger" style="background: black;color: white">
+                                                <div class="card-header">
+                                                    <h5 class="font-weight-normal" style="color: white"><a href="#!"
+                                                                                      class="text-h-primary text-reset"><b
+                                                            class="font-weight-bolder" style="color: wheat">{{ posts.author.username }}</b></a>
+                                                        تاريخ تسجيل المقال</h5>
+                                                    <p class="mb-0 text-muted" style="color: wheat">{{ posts.created_date }}</p>
+                                                    <div class="card-header-right">
+                                                        <div class="btn-group card-option">
+                                                            <button type="button" class="btn dropdown-toggle"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+                                                                <i class="feather icon-more-horizontal"></i>
+                                                            </button>
+
+
+                                                        </div>
+                                                            <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                                                <li class="dropdown-item full-card"><a
+                                                                        href="#!"><span><i
+                                                                        class="feather icon-maximize"></i> maximize</span><span
+                                                                        style="display:none"><i
+                                                                        class="feather icon-minimize"></i> Restore</span></a>
+                                                                </li>
+                                                                <li class="dropdown-item minimize-card"><a
+                                                                        href="#!"><span><i
+                                                                        class="feather icon-minus"></i> collapse</span><span
+                                                                        style="display:none"><i
+                                                                        class="feather icon-plus"></i> expand</span></a>
+                                                                </li>
+                                                                <li class="dropdown-item reload-card"><a href="#!"><i
+                                                                        class="feather icon-refresh-cw"></i> reload</a>
+                                                                </li>
+                                                                <li class="dropdown-item close-card"><a href="#!"><i
+                                                                        class="feather icon-trash"></i> remove</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                            </div>
+
+                                                    </div>
+
+                                                {% if posts.image %}
+
+                                                    <img  src="{{ posts.image.url }}" alt="" style="height:500px ;width: 100%"
+                                                                      class="img-fluid">
+                                                {% endif %}
+
+                                                {% if posts.video %}
+                                                    <video src="{{ posts.video.url }}" controls height="100%"
+                                                           width="100%" ></video>
+                                                {% endif %}
+
+                                                <div class="card-body border border-danger">
+                                                    <a href="#!" class="text-h-primary">
+                                                        <h4 class="pb-2" style="color: wheat">{{ posts.title }}</h4>
+                                                        <p class="pb-2" style="color: honeydew">{{ posts.profile.FullName }}</p>
+                                                    </a>
+                                                    <p class=" mb-0" style="color: white">{{ posts.caption | safe}}</p>
+                                                </div>
+                                                <div class="card-body border-top border-bottom">
+                                                 <div class="engagement">
+
+
+                                                     <ul class="list-inline m-0">
+                                                        <form action="{% url 'like_postWeb' %}" method="POST" class="ui form" >
+                                                            {% csrf_token %}
+                                                            <input type="hidden" name="post_id" value="{{posts.id}}">
+                                                        {% if user not in posts.liked.all %}
+                                                        <li class="list-inline-item pl-4"><button
+                                                                                        class="text-danger text-h-danger pl-4"><i
+                                                                class="feather icon-heart-on mr-2 " style="color: green"></i>{{posts.liked.all.count}}</button></li>
+                                                        {% else %}
+                                                            <li class="list-inline-item pl-4"><button
+                                                                                        class="text-danger text-h-danger pl-4"><i
+                                                                class="feather icon-heart-on mr-2 " ></i>{{posts.liked.all.count}}</button></li>
+
+                                                         {% endif %}
+
+                                                        <li class="list-inline-item" style="color: white"><a href="#!" style="color: white"
+                                                                                         style="color: white"><i
+                                                                class="feather icon-share-2 mr-2"></i>Share</a></li>
+                                                        </form>
+
+                                                    </ul>
+
+
+
+                                                </div>
+
+
+
+                                                <div class="card-body">
+                                                    <div class="row justify-content-between mb-4">
+                                                        <div class="col-auto"><a href="#!" style="color: white"
+                                                        >Comment
+                                                            ({{ posts.number_of_comments }})</a></div>
+
+                                                    </div>
+                                                {% if posts.profile.is_Media == True %}
+                                                 <div class="card-body p-2 text-center " style="color: white">
+
+
+                           {% if posts.profile.Snapchat != None %}
+                              <a href="{{ posts.profile.Snapchat }}"><i class="fa fa-snapchat p-2" style="color: white"></i></a>
+                           {% endif %}
+                           {% if posts.profile.YouTube != None %}
+                              <a href="{{ posts.profile.YouTube }}"><i class="fa fa-youtube-play p-2 " style="color: white"></i></a>
+                           {% endif %}
+                           {% if posts.profile.Instagram != None %}
+                           <a href="{{ posts.profile.Instagram }}"><i class="fa fa-instagram p-2" style="color: white"></i></a>
+                            {% endif %}
+                           {% if posts.profile.Twitter != None %}
+                           <a href="{{ posts.profile.Twitter }}"><i class="fa fa-twitter p-2" style="color: white"></i></a>
+                            {% endif %}
+                           {% if posts.profile.Facebook != None %}
+                            <a href="{{ posts.profile.Facebook }}"><i class="fa fa-facebook p-2" style="color: white"></i></a>
+                                {% endif %}
+                                            </div>
+                                                {% endif %}
+                                                     {% for comm in Commen %}
+                                                    <div class="media mb-0">
+                                                        <img src="{{ comm.post_connected.profile.Profile_Icon.url }}"
+                                                             alt="user image"
+                                                             class="img-radius wid-30 align-top m-r-15">
+                                                        <div class="media-body">
+                                                            <a href="#!">
+                                                                <h6 class="mb-0 " style="color: wheat"> {{ comm.author }}</h6>
+                                                            </a>
+                                                            <p class="m-b-0" style="color: white">{{ comm.content }}
+                                                                <a href="#!"
+                                                                   class="text-muted text-h-danger ml-1"><small>.</small></a>
+                                                                <a href="#!"
+                                                                   class="text-muted text-h-primary ml-1"><small>.</small></a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+
+                                                    {% endfor %}
+                                                    <hr>
+                                                    <div class="media mb-0">
+
+                                                        <img src="{{ posts.profile.Profile_Icon.url}}"
+                                                             alt="user image"
+                                                             class="img-radius wid-40 align-top m-r-15">
+                                                        <div class="media-body">
+                                                            <form action="" method="POST">
+                                                                 {% csrf_token %}
+                                                            <div class="form-group">
+                                                                <label class="floating-label" for="comment1">Write
+                                                                    comment hear !. . .</label>
+                                                                <input type="text" class="form-control" id="comment" name="content">
+
+                                                                <div class="form-icon">
+                                                                    <button class="btn btn-primary btn-icon" type="submit">
+                                                                        <i class="feather icon-message-circle"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                                 </form>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+
+
+
+{% endblock %}
+
+{% block script_body %}
+<script src="{%static 'assets/js/vendor-all.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/bootstrap.min.js'%}"></script>
+<script src="{%static 'assets/js/ripple.js'%}"></script>
+<script src="{%static 'assets/js/pcoded.min.js'%}"></script>
+<script src="{%static 'assets/js/menu-setting.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/prism.js'%}"></script>
+<script src="{%static 'assets/js/plugins/ekko-lightbox.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/lightbox.min.js'%}"></script>
+<script src="{%static 'assets/js/pages/ac-lightbox.js'%}"></script>
+
+<script src="{%static 'assets/js/plugins/trumbowyg.min.js'%}"></script>
+
+
+
+    <script src="{% static 'assets/js/ajax.js' %}"></script>
+
+
+{% endblock script_body %}
+
+
+
+

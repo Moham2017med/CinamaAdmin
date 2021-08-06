@@ -1,0 +1,82 @@
+{% load static %}
+
+<div class="row">
+    <div class="vg-slider owl-carousel">
+        <div class="col-lg-12">
+            <div class="row">
+                {% for yuo in youTube|slice:"0:2" %}
+                    {% if yuo.is_active == True %}
+                        <div class="col-md-6">
+                            <div class="vg-item large-vg set-bg" data-setbg="{{ yuo.image.url }}">
+                                <a href="https://www.google.com/https://www.youtube.com/watch?v={{ yuo.linke }}"
+                                   class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                                <div class="vg-text">
+                                    <h5>{{ yuo.title }}</h5>
+                                    <ul>
+                                        <li><i class="fa fa-clock-o"></i> {{ yuo.created }}</li>
+                                        <li><i class="fa fa-comment-o"></i>{{ yuo.author.FullName }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+            <div class="row">
+
+                {% for yuo in youTube|slice:"4:7" %}
+                    {% if yuo.is_active == True %}
+                        <div class="col-md-4">
+                            <div class="vg-item set-bg" data-setbg="{{ yuo.image.url }}">
+                                <a href="https://www.google.com/https://www.youtube.com/watch?v={{ yuo.linke }}"
+                                   class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                                <div class="vg-text">
+                                    <h6>{{ yuo.title }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                {% for yuo in youTube|slice:"2:4" %}
+                    {% if yuo.is_active == True %}
+                        <div class="col-md-6">
+                            <div class="vg-item large-vg set-bg" data-setbg="{{ yuo.image.url }}">
+                                <a href="https://www.google.com/https://www.youtube.com/watch?v={{ yuo.linke }}"
+                                   class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                                <div class="vg-text">
+                                    <h5>{{ yuo.title }}</h5>
+                                    <ul>
+                                        <li><i class="fa fa-clock-o"></i> {{ yuo.created }}</li>
+                                        <li><i class="fa fa-comment-o"></i>{{ yuo.author.FullName }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+            <div class="row">
+                {% for yuo in youTube|slice:"7:10" %}
+                    {% if yuo.is_active == True %}
+                        <div class="col-md-4">
+                            <div class="vg-item set-bg" data-setbg="{{ yuo.image.url }}">
+                                <a href="https://www.google.com/https://www.youtube.com/watch?v={{ yuo.linke }}"
+                                   class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                                <div class="vg-text">
+                                    <h6>{{ yuo.title }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

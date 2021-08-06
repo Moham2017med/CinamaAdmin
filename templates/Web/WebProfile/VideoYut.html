@@ -1,0 +1,79 @@
+{% load static %}
+ <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="card border border-danger" style="background: black">
+                    <div class="row">
+                        {% for yut in youTube %}
+                            <div class="col-md-6 order-md-2 p-4" style="background: black">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                         aria-labelledby="home-tab">
+                                        <div class="card border border-danger bg-dark" style="height: 500px">
+                                            <div class="card-header">
+
+                                                <h5 class="font-weight-normal" style="color: white"><a href="#!"
+                                                                                  class="text-h-primary text-reset"><b
+                                                        class="font-weight-bolder"
+                                                        style="color: red">{{ yut.author.user.username }}</b></a>
+                                                    posted on your timeline</h5>
+                                                <p class="mb-0 " style="color: white">{{ yut.created }}</p>
+                                                <div class="card-header-right">
+                                                    <div class="btn-group card-option">
+                                                        <button type="button" class="btn dropdown-toggle"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                            <i class="feather icon-more-horizontal"></i>
+                                                        </button>
+
+
+                                                        <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                                            <li class="dropdown-item full-card"><a
+                                                                    href="#!"><span><i
+                                                                    class="feather icon-maximize"></i> maximize</span><span
+                                                                    style="display:none"><i
+                                                                    class="feather icon-minimize" ></i> Restore</span></a>
+                                                            </li>
+                                                            <li class="dropdown-item minimize-card"><a
+                                                                    href="#!"><span><i
+                                                                    class="feather icon-minus"></i> collapse</span><span
+                                                                    style="display:none"><i
+                                                                    class="feather icon-plus"></i> expand</span></a>
+                                                            </li>
+                                                            <li class="dropdown-item reload-card"><a href="#!"><i
+                                                                    class="feather icon-refresh-cw"></i> reload</a>
+                                                            </li>
+                                                            <li class="dropdown-item close-card"><a href="#!"><i
+                                                                    class="feather icon-trash"></i> remove</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="vg-item large-vg set-bg" data-setbg="{{ yut.image.url }}">
+                                                <a href="https://www.google.com/https://www.youtube.com/watch?v={{ yut.linke }}"
+                                                    class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                                                <div class="vg-text">
+                                                    <h5>{{ yut.title }}</h5>
+                                                    <ul>
+                                                        <li><i class="fa fa-comment-o"></i>{{ yut.author.FullName }}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="card-body border-top border-bottom">
+
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

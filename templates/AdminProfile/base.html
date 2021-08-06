@@ -1,0 +1,89 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ablepro v8.0 bootstrap admin template by Phoenixcoded</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Phoenixcoded">
+    <!-- Favicon icon -->
+    <link rel="icon" href="{%static 'assets/images/favicon.ico' %}" type="image/x-icon">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{%static 'assets/css/style.css' %}">
+
+
+    <link rel="stylesheet" class="layout-css" href="{%static 'assets/css/layout-dark.css'%}">
+     {% if LANGUAGE_CODE == 'ar' %}
+    <link rel="stylesheet" class="rtl-css" href="{%static 'assets/css/layout-rtl.css'%}">
+
+    {% endif %}
+
+
+</head>
+<body class="background-img-3">
+<!-- [ Pre-loader ] start -->
+
+<!-- [ Pre-loader ] End -->
+<!-- [ navigation menu ] start -->
+
+
+
+
+<!-- [ Header ] start -->
+ {% include 'AdminProfile/Sections/NavigatioMenu.html' %}
+ {% include 'AdminProfile/Sections/Header.html' %}
+
+<!-- [ MainContent ] start -->
+
+
+{% block Content %}
+
+{% endblock Content %}
+
+{% include 'AdminProfile/Sections/Warning.html' %}
+
+<!-- Required Js -->
+<script src="{%static 'assets/js/vendor-all.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/bootstrap.min.js' %}"></script>
+<script src="{%static 'assets/js/ripple.js' %}"></script>
+<script src="{%static 'assets/js/pcoded.min.js' %}"></script>
+<script src="{%static 'assets/js/menu-setting.min.js' %}"></script>
+
+<script src="{%static 'assets/js/plugins/apexcharts.min.js'%}"></script>
+<!-- custom-chart js -->
+<script src="{%static 'assets/js/pages/dashboard-main.js' %}"></script>
+{% block extrahead %}
+<script>window.CKEDITOR_BASEPATH = "{%static 'ckeditor/ckeditor'%}";</script>
+{{ block.super }}
+{% endblock %}
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    {% block script_body %}
+<!-- Apex Chart -->
+
+    {% endblock script_body %}
+
+
+{% include 'AdminProfile/Sections/Settings.html' %}
+
+</body>
+</html>

@@ -1,0 +1,435 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block head_title %}منشور{% endblock %}
+ {% block css_body %}
+   <link rel="icon" href="{%static 'assets/images/favicon.ico' %}" type="image/x-icon">
+
+    <!-- prism css -->
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/prism-coy.css'%}">
+    <!-- ekko-lightbox css -->
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/ekko-lightbox.css' %}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/lightbox.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/plugins/trumbowyg.min.css'%}">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+
+
+
+ {% endblock css_body %}
+{% block content %}
+
+
+
+    <section class="details-post-section spad">
+        <div class="container">
+        <div class="col-sm-12 ">
+                        <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0 " style="background: black;color: white">
+                                <h2 class="m-0" style="color: white">100 %</h2>
+                                <span style="color: wheat">النتيجة النهائية</span>
+                                <p class="mb-3 mt-3">لقد تتم تأهلك الى المرحلة التالية</p>
+                            </div>
+                            <div id="support-chart" class="bg-dark"></div>
+                            <div class="card-footer  text-white" style="background: black">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">60 %</h4>
+                                        <span>تقييم لجنة التحكيم</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">30 %</h4>
+                                        <span>تقييم اليوتيوب / الموقع</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">10 %</h4>
+                                        <span>تصويت الموقع</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        <div class="row">
+             <div class="col-sm-3 ">
+                        <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0 " style="background: black;color: white">
+                                <h2 class="m-0" style="color: white">15 %</h2>
+                                <span style="color: wheat">تقيم لجنة التحكم</span>
+                                <p class="mb-3 mt-3">نتائج قيم لجنة التحكيم</p>
+                            </div>
+                            <!--div id="support-chart" class="bg-dark"></div-->
+                            <div class="card-footer  text-white" style="background: black">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">100</h4>
+                                        <span>أجمالي</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">70</h4>
+                                        <span>المكتسبة</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">30</h4>
+                                        <span>المتبقية</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             <div class="col-sm-3 ">
+                        <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0 " style="background: black;color: white">
+                                <h2 class="m-0" style="color: white">15 %</h2>
+                                <span style="color: wheat">تقيم لجنة التحكم</span>
+                                <p class="mb-3 mt-3">نتائج قيم لجنة التحكيم</p>
+                            </div>
+                            <!--div id="support-chart" class="bg-dark"></div-->
+                            <div class="card-footer  text-white" style="background: black">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">100</h4>
+                                        <span>أجمالي</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">60</h4>
+                                        <span>المكتسبة</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">40</h4>
+                                        <span>المتبقية</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             <div class="col-sm-3 ">
+                        <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0 " style="background: black;color: white">
+                                <h2 class="m-0" style="color: white">15 %</h2>
+                                <span style="color: wheat">تقيم لجنة التحكم</span>
+                                <p class="mb-3 mt-3">نتائج قيم لجنة التحكيم</p>
+                            </div>
+                            <!--div id="support-chart" class="bg-dark"></div-->
+                            <div class="card-footer  text-white" style="background: black">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">100</h4>
+                                        <span>أجمالي</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">50</h4>
+                                        <span>المكتسبة</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">50</h4>
+                                        <span>المتبقية</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <div class="col-sm-3 ">
+                        <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0 " style="background: black;color: white">
+                                <h2 class="m-0" style="color: white">15 %</h2>
+                                <span style="color: wheat">تقيم لجنة التحكم</span>
+                                <p class="mb-3 mt-3">نتائج قيم لجنة التحكيم</p>
+                            </div>
+                            <!--div id="support-chart" class="bg-dark"></div-->
+                            <div class="card-footer  text-white" style="background: black">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">100</h4>
+                                        <span>أجمالي</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">90</h4>
+                                        <span>المكتسبة</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">10</h4>
+                                        <span>المتبقية</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+
+            <div class="row">
+                <div class="card  text-white p-4" style="background: black">
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                     aria-labelledby="home-tab">
+                                    <div class="card border border-danger">
+                                        <div class="card-header" style="background: black;color: white">
+                                            <h5 class="font-weight-normal" style="color: white"><a href="#!"
+                                                                              class="text-h-primary text-reset"><b
+                                                    class="font-weight-bolder" style="color: white">{{ my_video.channel.user.username }}</b></a>
+                                                posted on your timeline</h5>
+                                            <p class="mb-0 text-muted"
+                                               style="color: white" >{{ my_video.uploaded }}</p><div class="text-center">
+                                            <li class="list-inline-item"><a href="#" style="color: white">
+                                                    ({{ view_count }})مشاهدات </a>
+                                                </li>
+                                        </div>
+                                            <div class="card-header-right">
+                                                <div class="btn-group card-option">
+                                                    <button type="button"
+                                                            class="btn dropdown-toggle"
+                                                            data-toggle="dropdown"
+                                                            aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                        <i class="feather icon-more-horizontal"></i>
+                                                    </button>
+
+
+                                                </div>
+                                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                                    <li class="dropdown-item full-card"><a
+                                                            href="#!"><span><i
+                                                            class="feather icon-maximize"></i> maximize</span><span
+                                                            style="display:none"><i
+                                                            class="feather icon-minimize"></i> Restore</span></a>
+                                                    </li>
+                                                    <li class="dropdown-item minimize-card"><a
+                                                            href="#!"><span><i
+                                                            class="feather icon-minus"></i> collapse</span><span
+                                                            style="display:none"><i
+                                                            class="feather icon-plus"></i> expand</span></a>
+                                                    </li>
+                                                    <li class="dropdown-item reload-card"><a
+                                                            href="#!"><i
+                                                            class="feather icon-refresh-cw"></i>
+                                                        reload</a>
+                                                    </li>
+                                                    <li class="dropdown-item close-card"><a
+                                                            href="#!"><i
+                                                            class="feather icon-trash"></i>
+                                                        remove</a></li>
+                                                </ul>
+                                            </div>
+
+
+                                        </div>
+
+
+                                    </div>
+
+
+
+                                    {% if my_video.video %}
+                                        <div class="border border-danger">
+                                        <video src="{{ my_video.video.url }}" controls
+                                               height="100%"
+                                               width="100%"></video></div>
+                                    {% endif %}
+
+                                    <div class="card-body border border-danger">
+                                        <a href="#!" class="text-white">
+                                            <h6>{{ my_video.title }}</h6>
+                                        </a>
+                                        <p class=" mb-0" style="color: wheat">{{ my_video.description }}</p>
+                                    </div>
+                                    <div class="card-body border-top border-bottom">
+
+
+
+
+                                                  {% if my_video.channel.is_Media == True %}
+                                                 <div class="card-body p-2 text-center " style="color: white">
+
+
+                           {% if my_video.channel.Snapchat != None %}
+                              <a href="{{ my_video.channel.Snapchat }}"><i class="fa fa-snapchat p-2" style="color: white"></i></a>
+                           {% endif %}
+                           {% if my_video.channel.YouTube != None %}
+                              <a href="{{ my_video.channel.YouTube }}"><i class="fa fa-youtube-play p-2 " style="color: white"></i></a>
+                           {% endif %}
+                           {% if my_video.channel.Instagram != None %}
+                           <a href="{{ my_video.channel.Instagram }}"><i class="fa fa-instagram p-2" style="color: white"></i></a>
+                            {% endif %}
+                           {% if my_video.channel.Twitter != None %}
+                           <a href="{{ pmy_video.channel.Twitter }}"><i class="fa fa-twitter p-2" style="color: white"></i></a>
+                            {% endif %}
+                           {% if my_video.channel.Facebook != None %}
+                            <a href="{{ my_video.channel.Facebook }}"><i class="fa fa-facebook p-2" style="color: white"></i></a>
+                                {% endif %}
+                                            </div>
+                                                {% endif %}
+
+                                        </div>
+                                <h4 class="border-bottom p-4 text-center" style="color: wheat">نصائح لجنة التحكيم / الادارة</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                    <div class="col-sm-4 p-4">
+                        <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0 " style="background: black;color: white">
+                                <h2 class="m-0" style="color: white">30 %</h2>
+                                <span style="color: wheat">نتائج اليوتيوب</span>
+                                <p class="mb-3 mt-3">نسبة قيم اليوتيوب</p>
+                            </div>
+                            <div id="support-chart" class="bg-dark"></div>
+                            <div class="card-footer  text-white" style="background: black">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">2000</h4>
+                                        <span>مشاهدات</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">1000</h4>
+                                        <span>أعجابات</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">50</h4>
+                                        <span>عدم أعجابات</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0 " style="background: black;color: white">
+                                <h2 class="m-0" style="color: white">30 %</h2>
+                                <span style="color: wheat">نتائج الموقع</span>
+                                <p class="mb-3 mt-3">نسبة تقيم مشاهدات و اعجابات الموقع</p>
+                            </div>
+                            <div id="support-chart" class="bg-dark"></div>
+                            <div class="card-footer  text-white" style="background: black">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">2000</h4>
+                                        <span>مشاهدات</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">1000</h4>
+                                        <span>أعجابات</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">50</h4>
+                                        <span>عدم أعجابات</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0 " style="background: black;color: white">
+                                <h2 class="m-0" style="color: white">10 %</h2>
+                                <span style="color: wheat">نتائج تصويت الموقع</span>
+                                <p class="mb-3 mt-3">نسبة التصويت الموقع</p>
+                            </div>
+                            <div id="support-chart" class="bg-dark"></div>
+                            <div class="card-footer  text-white" style="background: black">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">2000</h4>
+                                        <span>أجمالي </span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">1000</h4>
+                                        <span>عدد الايجابي</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">50</h4>
+                                        <span>عدم التصويت</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+{% endblock %}
+
+{% block script_body %}
+<script src="{%static 'assets/js/vendor-all.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/bootstrap.min.js'%}"></script>
+<script src="{%static 'assets/js/ripple.js'%}"></script>
+<script src="{%static 'assets/js/pcoded.min.js'%}"></script>
+<script src="{%static 'assets/js/menu-setting.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/prism.js'%}"></script>
+<script src="{%static 'assets/js/plugins/ekko-lightbox.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/lightbox.min.js'%}"></script>
+<script src="{%static 'assets/js/pages/ac-lightbox.js'%}"></script>
+
+<script src="{%static 'assets/js/plugins/trumbowyg.min.js'%}"></script>
+<script src="{%static 'assets/js/plugins/apexcharts.min.js'%}"></script>
+<!-- custom-chart js -->
+<script src="{%static 'assets/js/pages/dashboard-main.js' %}"></script>
+
+
+
+<script src="{% static 'assets/js/ajax.js' %}"></script>
+
+     <script>
+    $(document).ready(function() {
+        checkCookie();
+    });
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        var ticks = getCookie("modelopen");
+        if (ticks != "") {
+            ticks++ ;
+            setCookie("modelopen", ticks, 1);
+            if (ticks == "2" || ticks == "1" || ticks == "0") {
+                $('#exampleModalCenter').modal();
+            }
+        } else {
+            // user = prompt("Please enter your name:", "");
+            $('#exampleModalCenter').modal();
+            ticks = 1;
+            setCookie("modelopen", ticks, 1);
+        }
+    }
+</script>
+
+
+{% endblock script_body %}
+
+
+
+

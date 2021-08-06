@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="col-md-4">
+    <div class="vg-item set-bg" data-setbg="{{ vid.thumbnail.url }}">
+        <a href="{% url 'VideodetailsWeb' vid.id  %}"
+            class="play-btn "><i class="fa fa-play"></i></a>
+        <div class="vg-text">
+            <h6>{{ vid.title }}</h6>
+        </div>
+    </div>
+</div>

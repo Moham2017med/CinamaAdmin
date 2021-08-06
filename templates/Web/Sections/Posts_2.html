@@ -1,0 +1,47 @@
+{% load static %}
+{% if po.image %}
+    <div class="col-md-4">
+
+        <div class="un-item">
+            <div class="un_pic set-bg" data-setbg="{{ po.image.url }}">
+
+                <div class="label"><span>{{ po.profile.FullName }} _ {{ po.profile.Specialty }}</span></div>
+            </div>
+            <div class="un_text">
+                {% if po.caption|length > 20 %}
+                    <h6><a href="{% url 'PostDetailViewWeb' po.id %}">{{ po.caption |slice:'25' }}</a></h6>
+                {% else %}
+                    <h6><a href="#">{{ po.caption }}</a></h6>
+                {% endif %}
+
+                <ul>
+                    <li><i class="fa fa-clock-o"></i>{{ po.created_date }}</li>
+                    <li><i class="fa fa-comment-o"></i> {{ po.number_of_comments }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% if po.video %}
+    <div class="col-md-4">
+        <div class="un-item">
+            <div class="un_pic set-bg" data-setbg="{{ po.imageVideo.url }} ">
+                <a href="{% url 'PostDetailViewWeb' po.id %}"
+                   class="play-btn "><i class="fa fa-play"></i></a>
+                <div class="label"><span>{{ po.profile.FullName }} _ {{ po.profile.Specialty }}</span></div>
+            </div>
+            <div class="un_text">
+                {% if po.caption|length > 20 %}
+                    <h6><a href="{% url 'PostDetailViewWeb' po.id %}">{{ po.caption |slice:'25' }}</a></h6>
+                {% else %}
+                    <h6><a href="#">{{ po.caption }}</a></h6>
+                {% endif %}
+
+                <ul>
+                    <li><i class="fa fa-clock-o"></i>{{ po.created_date }}</li>
+                    <li><i class="fa fa-comment-o"></i> {{ po.number_of_comments }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endif %}

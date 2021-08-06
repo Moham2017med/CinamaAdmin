@@ -1,0 +1,102 @@
+{% extends 'AdminProfile/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block Content %}
+    <div class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">{% trans 'home' %}</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#!">{% trans 'Cinema YouTube' %}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <!-- [ Main Content ] start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="row">
+                        {% for Com in Comitys %}
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <img src="{{ Com.Profile_Icon.url }}" alt="image"
+                                                 class="img-fluid wid-100 mb-2">
+                                            <h5>{{ Com.user }}<br><span class="badge badge-success" style="color: black">{{ Com.FullName }}</span>
+                                            </h5>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm mb-0">
+                                                <tbody>
+                                                <tr>
+                                                    <td> الدولة</td>
+                                                    <td> : {{ Com.State }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td> نوع التخصص</td>
+                                                    <td> : {{ Com.SpecialtyType }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>التخصص</td>
+                                                    <td> : {{ Com.Specialty }}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    {{ Judgementy.count }}
+
+
+                                        {% if Judgementy.JudgementComity == Comitys.slug and Judgementy.video.id == my_videos.id %}
+                                        <div class="text-center">
+                                            <a href="{% url 'AddComitys' Com.slug my_videos.id%}"
+                                               class="btn btn-danger  text-center" style="color:black">أضافة لجنة
+                                                التحكيم</a>
+                                        </div>
+                                            {% else %}
+                                            <div class="text-center">
+                                            <a href="{% url 'AddComitys' Com.slug my_videos.id%}"
+                                               class="btn btn-success  text-center" style="color:black">أضافة لجنة
+                                                التحكيم</a>
+                                        </div>
+
+
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

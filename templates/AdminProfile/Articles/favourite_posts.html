@@ -1,0 +1,157 @@
+{% extends 'AdminProfile/Articles/MunePosts.html' %}
+{% load static %}
+{% load i18n %}
+
+   {% block post %}
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                      <h3 style="text-align: center;">Posts saved by {{user.username}} : {{num_count}}</h3><br>
+
+                        <div class="card">
+
+                            <div class="row pt-4" style="background: black">
+                              {% for post in favourite_posts %}
+                                <div class="col-md-12 order-md-2">
+
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                             aria-labelledby="home-tab">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5 class="font-weight-normal"><a href="#!"
+                                                                                      class="text-h-primary text-reset"><b
+                                                            class="font-weight-bolder">{{ post.Articles.author.username }}</b></a>
+                                                        posted on your timeline</h5>
+                                                    <p class="mb-0 text-muted">{{ post.Articles.created_date }}</p>
+                                                    <div class="card-header-right">
+
+                                                        <div class="btn-group card-option">
+
+                                                            <button type="button" class="btn dropdown-toggle"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+                                                                <i class="feather icon-more-horizontal"></i>
+                                                            </button>
+
+                                                            <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                                                <li class="dropdown-item full-card"><a
+                                                                        href="#!"><span><i
+                                                                        class="feather icon-maximize"></i> maximize</span><span
+                                                                        style="display:none"><i
+                                                                        class="feather icon-minimize"></i> Restore</span></a>
+                                                                </li>
+                                                                <li class="dropdown-item minimize-card"><a
+                                                                        href="#!"><span><i
+                                                                        class="feather icon-minus"></i> collapse</span><span
+                                                                        style="display:none"><i
+                                                                        class="feather icon-plus"></i> expand</span></a>
+                                                                </li>
+                                                                <li class="dropdown-item reload-card"><a href="#!"><i
+                                                                        class="feather icon-refresh-cw"></i> reload</a>
+                                                                </li>
+                                                                <li class="dropdown-item close-card"><a href="#!"><i
+                                                                        class="feather icon-trash"></i> remove</a></li>
+                                                            </ul>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <div class="post_options"><a href="{% url 'post_details' post.id %}"><svg class="bi bi-three-dots" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" clip-rule="evenodd"/>
+              </svg></a></div>
+
+                                                {% if post.Articles.image %}
+
+                                                    <img src="{{ post.Articles.image.url }}" alt="" style="height:500px"
+                                                                      class="img-fluid">
+                                                {% endif %}
+
+
+
+                                                <div class="card-body">
+                                                    <a href="#!" class="text-h-primary">
+                                                        <h6>{{ post.Articles.author }}</h6>
+                                                    </a>
+                                                    <p class="text-muted mb-0">{{ post.Articles.caption|safe }}</p>
+                                                </div>
+                                                <div class="card-body border-top border-bottom">
+                                                 <div class="engagement">
+
+
+                                                    <ul class="list-inline m-0">
+                                                        <form action="{% url 'like_post' %}" method="POST" class="ui form">
+                                                            {% csrf_token %}
+                                                            <input type="hidden" name="post_id" value="{{post.Articles.id}}">
+                                                        {% if user not in posts.Articles.liked.all %}
+                                                        <li class="list-inline-item"><button
+                                                                                        class="text-danger text-h-danger"><i
+                                                                class="feather icon-heart-on mr-2" style="color: green"></i>{{post.Articles.liked.all.count}}</button></li>
+                                                        {% else %}
+                                                            <li class="list-inline-item"><button
+                                                                                        class="text-danger text-h-danger"><i
+                                                                class="feather icon-heart-on mr-2" ></i>{{post.Articles.liked.all.count}}</button></li>
+
+                                                         {% endif %}
+                                                        <div class="engagement text-right">
+
+                                                            <button class="btn-success" style="background-color: green; color: black">
+
+
+                                                             <a href="javascript:void()" onclick="document.getElementById('favoriteform').submit();"><i
+                                                                    class="feather icon-file" style=" color: black"></i>
+
+                                                             </a></button></div>
+                                                        </form>
+
+
+
+                                                        <li class="list-inline-item"><a href="#"
+                                                                                        class="text-muted text-h-primary"><i
+                                                                class="feather icon-message-square mr-2"></i>Comment</a>
+                                                        </li>
+                                                        <li class="list-inline-item"><a href="#!"
+                                                                                        class="text-muted text-h-primary"><i
+                                                                class="feather icon-share-2 mr-2"></i>Share</a></li>
+                                                    </ul>
+
+
+
+
+                                                </div>
+
+
+                                                <div class="card-body">
+                                                    <div class="row justify-content-between mb-4">
+                                                        <div class="col-auto"><a href="#!"
+                                                                                 class="text-muted text-h-primary">Comment
+                                                            ({{ post.Articles.number_of_comments }})</a></div>
+                                                        <div class="col-auto"><a href="#!"
+                                                                                 class="text-muted text-h-primary">See
+                                                            All</a></div>
+                                                    </div>
+
+                                                    <hr>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+    {% empty%}
+    <h2 style="text-align: center;">You don't have any saved Posts</h2>
+
+    </div>
+
+    {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+

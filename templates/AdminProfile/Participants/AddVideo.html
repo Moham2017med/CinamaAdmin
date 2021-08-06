@@ -1,0 +1,93 @@
+{% extends 'AdminProfile/MyVideo/MuneVideo.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block Video %}
+
+ <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+
+                            <form action="." method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+
+                                <div class="form-group row p-4">
+                                    <label class="col-sm-3 col-form-label font-weight-bolder">عنوان الفيديو</label>
+                                    <div class="col-sm-9">
+                                        {{ form.title }}
+                                    </div>
+                                </div>
+
+                                 <div class="form-group row p-4">
+                                    <label class="col-sm-3 col-form-label font-weight-bolder">حالة الفيديو</label>
+                                    <div class="col-sm-9">
+                                     {{ form.Stages }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row p-4">
+                                    <label class="col-sm-3 col-form-label font-weight-bolder">حالة الفيديو</label>
+                                    <div class="col-sm-9">
+                                     {{ form.MovieSections }}
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group row p-4">
+                                    <label class="col-sm-3 col-form-label font-weight-bolder">تحميل الفيديو</label>
+                                    <div class="col-sm-9">
+
+                                        {{ form.video }}
+
+                                    </div>
+                                </div>
+
+                                 <div class="form-group row p-4">
+                                    <label class="col-sm-3 col-form-label font-weight-bolder">وصف الفيديو</label>
+                                    <div class="col-sm-9">
+                                       {{ form.description }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row p-4">
+                                    <label class="col-sm-3 col-form-label font-weight-bolder">حالة الفيديو</label>
+                                    <div class="col-sm-9">
+                                     {{ form.visibility }}
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group row p-4">
+                                    <label class="col-sm-3 col-form-label font-weight-bolder">صورة الفيديو</label>
+                                    <div class="col-sm-9">
+
+                                        {{ form.thumbnail }}
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label"></label>
+                                    <div class="col-sm-9">
+                                        <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+{% endblock %}
+
+{% block script_body %}
+
+{% endblock %}
+

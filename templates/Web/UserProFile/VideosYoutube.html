@@ -1,0 +1,73 @@
+{% load static %}
+<!-- Videos Guide Section Begin -->
+<section class="video-guide-section">
+    <div class="container">
+        <div class="section-title text-center" style="background: red">
+            <h5>فيديوهات اليوتيوب</h5>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h5></h5>
+                </div>
+            </div>
+        </div>
+        <div class="tab-elem">
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="tabs-5" role="tabpanel">
+                    <div class="row">
+                        <div class="vg-slider owl-carousel">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    {% for yuo in youTube|slice:"0:2" %}
+                                        {% if yuo.is_active == True %}
+
+                                            {% include 'Web/Sections/VideosYoutube_1.html' %}
+
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </div>
+                                <div class="row">
+                                    {% for yuo in youTube|slice:"4:7" %}
+                                        {% if yuo.is_active == True %}
+                                            {% include 'Web/Sections/VideosYoutube_2.html' %}
+
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="row">
+
+                                    {% for yuo in youTube|slice:"2:4" %}
+                                        {% if yuo.is_active == True %}
+
+                                            {% include 'Web/Sections/VideosYoutube_1.html' %}
+
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </div>
+                                <div class="row">
+                                    {% for yuo in youTube|slice:"7:10" %}
+                                        {% if yuo.is_active == True %}
+
+                                            {% include 'Web/Sections/VideosYoutube_2.html' %}
+
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>

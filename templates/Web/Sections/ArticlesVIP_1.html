@@ -1,0 +1,16 @@
+{% load static %}
+
+   <div class="col-md-6">
+    <div class="vg-item large-vg set-bg" data-setbg="{{ vid.thumbnail.url }}">
+        <a href="{% url 'VideodetailsWeb' vid.id  %}"
+            class="play-btn "><i class="fa fa-play"></i></a>
+        <div class="vg-text">
+            <h5>{{ vid.title }}</h5>
+            <ul>
+                <li><i class="fa fa-clock-o"></i> {{ vid.uploaded }}</li>
+                <li><i class="fa fa-comment-o"></i>{{ vid.channel.FullName }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,81 @@
+{% extends 'AdminProfile/Competitions/Participants/MuneParticipants.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block Participants %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="row">
+                        {% for Jud in Judgementy %}
+
+                             {% if Jud.Stages.id == my_videos.Stages.id %}
+                             {% if Jud.MovieSections.id ==  my_videos.MovieSections.id %}
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <img src="{{ Jud.JudgementComity.Profile_Icon.url }}" alt="image"
+                                                 class="img-fluid wid-100 mb-2">
+                                            <h5>{{ Com.user }}<br><span class="badge badge-success" style="color: black">{{ Jud.JudgementComity.FullName }}</span>
+                                            </h5>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm mb-0">
+                                                <tbody>
+                                                <tr>
+                                                    <td> الدولة</td>
+                                                    <td> : {{ Jud.JudgementComity.State }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td> نوع التخصص</td>
+                                                    <td> : {{ Jud.Stages }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>التخصص</td>
+                                                    <td> : {{ Jud.MovieSections }}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <form action="{% url 'videoJudgementRacer'  %}" method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+
+                                            <input type="hidden" name="JudgementComity" value="{{Jud.id}}">
+
+
+                                        <div class="text-center">
+
+                                            <button type="submit"
+                                               class="btn btn-danger  text-center" style="color:black">أضافة متسابق</button>
+
+                                        </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                                  {% endif %}
+                                  {% endif %}
+                                  {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
